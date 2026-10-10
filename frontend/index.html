@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Quanticus Software Solutions | Technology that moves business forward</title>
+  <meta name="description"
+    content="We build practical software and management tools for established businesses. Dedicated in-house technology team delivering and supporting operational systems.">
+  <meta name="keywords"
+    content="Quanticus, Software Solutions, Web Development, Mobile Development, Enterprise Applications, API Integration, IT Support">
+  <meta name="theme-color" content="#1d4ed8">
+  <meta name="color-scheme" content="light">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Quanticus Software Solutions">
+  <meta property="og:description"
+    content="Technology that moves business forward. We build, deploy, and maintain software for real business operations.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  <!-- Google Fonts Preconnect & Import -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+  <!-- =========================================================================
+       NAVIGATION BAR
+       ========================================================================= -->
+  <header class="site-header" role="banner">
+    <div class="container nav-container">
+
+      <!-- Navbar Brand: Quanticus Logo Asset on White Plate -->
+      <a href="#home" class="brand-logo" aria-label="Quanticus Home">
+        <span class="logo-plate brand-logo-plate">
+          <img src="assets/quanticus-logo.png" alt="Quanticus" class="brand-logo-img" width="150" height="38">
+        </span>
+        <span class="brand-slogan nav-brand-slogan">Build What's Next.</span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" id="mainNavMenu" role="navigation" aria-label="Main Navigation">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#work" class="nav-link">Work</a>
+        <a href="#process" class="nav-link">Process</a>
+        <a href="#careers" class="nav-link">Careers</a>
+        <a href="#contact" class="btn btn-primary nav-cta-btn">Let's Connect</a>
+      </nav>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="mobile-toggle" id="mobileNavToggle" aria-label="Toggle Navigation Menu" aria-expanded="false"
+        aria-controls="mainNavMenu">
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="mainContent">
+
+    <!-- =======================================================================
+         1. HERO SECTION (REFINED CINEMATIC FROSTED GLASS & VIVID ORB MESH)
+         ======================================================================= -->
+    <section class="hero-section" id="home" aria-labelledby="heroHeadline">
+      <!-- Living Dot Field Background Canvas (2D) -->
+      <canvas id="heroDotFieldCanvas" class="hero-dotfield-canvas" aria-hidden="true"></canvas>
+
+      <!-- Film-Grain Noise Texture Overlay -->
+      <div class="hero-noise-overlay" aria-hidden="true"></div>
+
+      <div class="container hero-container">
+        <div class="hero-content-block">
+          <!-- Main Headline (Reveals word by word) -->
+          <h1 class="hero-headline" id="heroHeadline">
+            <span class="hero-word">Technology</span>
+            <span class="hero-word">that</span>
+            <span class="hero-word"><span class="text-gradient text-sweep">moves business</span></span>
+            <span class="hero-word">forward.</span>
+          </h1>
+
+          <!-- Subtext Description -->
+          <p class="hero-description hero-animate-item">
+            We build practical software that powers daily business operations. From custom web and mobile apps to
+            internal management tools, we build systems that work reliably.
+          </p>
+
+          <!-- Buttons Group -->
+          <div class="hero-cta-group hero-animate-item">
+            <a href="#services" class="btn btn-primary hero-btn-primary">
+              <span>Explore What We Do</span>
+              <svg class="btn-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true">
+                <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary hero-btn-glass">
+              <span>Let's Connect</span>
+            </a>
+          </div>
+
+          <!-- Trust / Core Pillars Area -->
+          <div class="hero-trust-bar hero-animate-item">
+            <div class="trust-item">
+              <span class="trust-dot" aria-hidden="true"></span>
+              <span>Built for Operations</span>
+            </div>
+            <div class="trust-item">
+              <span class="trust-dot" aria-hidden="true"></span>
+              <span>Clean & Maintainable</span>
+            </div>
+            <div class="trust-item">
+              <span class="trust-dot" aria-hidden="true"></span>
+              <span>Direct Team Support</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Soft Gradient Blend into About Section -->
+      <div class="hero-bottom-blend" aria-hidden="true"></div>
+    </section>
+
+    <!-- =======================================================================
+         2. ABOUT QUANTICUS SECTION
+         ======================================================================= -->
+    <section class="section section-subtle-bg" id="about" aria-labelledby="aboutSectionTitle">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <div class="section-identity">
+            <div class="identity-icon-box" aria-hidden="true">
+              <svg class="identity-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-3M9 9h1M9 13h1M9 17h1" />
+              </svg>
+            </div>
+            <span class="identity-label">About Quanticus</span>
+          </div>
+          <h2 class="section-title" id="aboutSectionTitle">Technology Built Around Real Business Needs</h2>
+          <p class="section-description">We are the dedicated technology team behind a group of established businesses.
+          </p>
+        </div>
+
+        <div class="about-grid">
+
+          <!-- Visual Story & Timeline Journey: 2024 -> Today -->
+          <div class="about-story-container">
+            <div class="story-timeline" id="aboutTimeline">
+
+              <!-- 2024 Milestone -->
+              <div class="timeline-milestone milestone-item-1">
+                <div class="milestone-node" aria-hidden="true"></div>
+                <div class="milestone-content">
+                  <div class="milestone-year-badge">2024 — Established</div>
+                  <h3 class="milestone-title">How We Started</h3>
+                  <p class="milestone-desc">
+                    Quanticus was formed in 2024 to give our business group a focused in-house engineering team for
+                    digital products and operational systems.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Today Milestone -->
+              <div class="timeline-milestone milestone-item-2">
+                <div class="milestone-node" aria-hidden="true"></div>
+                <div class="milestone-content">
+                  <div class="milestone-year-badge">Today — Supporting Operations</div>
+                  <h3 class="milestone-title">Delivering & Supporting Systems</h3>
+                  <p class="milestone-desc">
+                    With 10+ projects delivered and supported across 9+ client businesses, we manage the daily software,
+                    integrations, and tools our group relies on.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Integrated Statistics Cards -->
+          <div class="stats-cards-grid reveal reveal-delay-1">
+
+            <div class="stat-card">
+              <div class="stat-number" data-target="10" data-suffix="+">10+</div>
+              <div class="stat-label">Projects</div>
+              <div class="stat-sub">Delivered & supported across operations</div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-number" data-target="9" data-suffix="+">9+</div>
+              <div class="stat-label">Client Businesses</div>
+              <div class="stat-sub">Companies supported in our group</div>
+            </div>
+
+            <div class="stat-card featured">
+              <div class="stat-number" data-target="2024">2024</div>
+              <div class="stat-label">Established</div>
+              <div class="stat-sub">Dedicated to building and maintaining practical technology for real daily workflows.
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         3. SERVICES SECTION (WITHOUT NUMBER LABELS)
+         ======================================================================= -->
+    <section class="section" id="services" aria-labelledby="servicesSectionTitle">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <div class="section-identity">
+            <div class="identity-icon-box" aria-hidden="true">
+              <svg class="identity-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7" rx="1.5" />
+                <rect x="14" y="3" width="7" height="7" rx="1.5" />
+                <rect x="14" y="14" width="7" height="7" rx="1.5" />
+                <rect x="3" y="14" width="7" height="7" rx="1.5" />
+              </svg>
+            </div>
+            <span class="identity-label">Services</span>
+          </div>
+          <h2 class="section-title" id="servicesSectionTitle">Practical Digital Solutions For Business</h2>
+          <p class="section-description">We build, integrate, and maintain the software our businesses need to operate
+            smoothly.</p>
+        </div>
+
+        <div class="services-grid">
+
+          <!-- SERVICE 01 -->
+          <article class="service-card reveal">
+            <div class="service-card-header">
+              <div class="service-icon-box" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+              </div>
+            </div>
+            <h3 class="service-name">Web & Mobile Development</h3>
+            <p class="service-desc">Custom web portals and mobile applications built for specific business tasks.</p>
+            <p class="service-additional">Fast, clean interfaces designed for practical daily use by internal teams and
+              customers.</p>
+            <div class="service-tags" aria-label="Capabilities">
+              <span class="tag-badge">Web Portals</span>
+              <span class="tag-badge">Mobile Apps</span>
+              <span class="tag-badge">Custom Software</span>
+            </div>
+          </article>
+
+          <!-- SERVICE 02 -->
+          <article class="service-card reveal reveal-delay-1">
+            <div class="service-card-header">
+              <div class="service-icon-box" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+              </div>
+            </div>
+            <h3 class="service-name">Enterprise Application Services</h3>
+            <p class="service-desc">ERP and operational platforms configured for team workflows and record keeping.</p>
+            <p class="service-additional">We customize Frappe and internal systems to handle records, approvals, and
+              structured business reporting.</p>
+            <div class="service-tags" aria-label="Capabilities">
+              <span class="tag-badge">ERP Systems</span>
+              <span class="tag-badge">Workflow Tools</span>
+              <span class="tag-badge">Frappe</span>
+            </div>
+          </article>
+
+          <!-- SERVICE 03 -->
+          <article class="service-card reveal reveal-delay-2">
+            <div class="service-card-header">
+              <div class="service-icon-box" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+              </div>
+            </div>
+            <h3 class="service-name">API & Integration</h3>
+            <p class="service-desc">Connecting databases, external services, and internal tools through structured APIs.
+            </p>
+            <p class="service-additional">We build secure data pipelines and background services so information moves
+              accurately between platforms.</p>
+            <div class="service-tags" aria-label="Capabilities">
+              <span class="tag-badge">REST APIs</span>
+              <span class="tag-badge">System Sync</span>
+              <span class="tag-badge">Cloud Services</span>
+            </div>
+          </article>
+
+          <!-- SERVICE 04 -->
+          <article class="service-card reveal reveal-delay-3">
+            <div class="service-card-header">
+              <div class="service-icon-box" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+            </div>
+            <h3 class="service-name">IT Support & Solutions</h3>
+            <p class="service-desc">Direct technical support, server maintenance, and troubleshooting for business
+              teams.</p>
+            <p class="service-additional">We manage daily technical issues and keep company software and infrastructure
+              running without disruption.</p>
+            <div class="service-tags" aria-label="Capabilities">
+              <span class="tag-badge">System Support</span>
+              <span class="tag-badge">Maintenance</span>
+              <span class="tag-badge">Infrastructure</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         4. WORK SECTION (PROTOTYPE WIREFRAME VISUALS IN PHONE & BROWSER FRAMES)
+         ======================================================================= -->
+    <section class="section section-subtle-bg" id="work" aria-labelledby="workSectionTitle">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <div class="section-identity">
+            <div class="identity-icon-box" aria-hidden="true">
+              <svg class="identity-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                <polyline points="2 17 12 22 22 17" />
+                <polyline points="2 12 12 17 22 12" />
+              </svg>
+            </div>
+            <span class="identity-label">Work</span>
+          </div>
+          <h2 class="section-title" id="workSectionTitle">Curated Project Showcase</h2>
+          <p class="section-description">A look at some of the systems and tools we have built and currently maintain.
+          </p>
+        </div>
+
+        <div class="work-grid">
+
+          <!-- PROJECT 01: Capital Plus Trading App (Mobile Application Wireframe Prototype) -->
+          <article class="project-card reveal">
+            <div class="project-visual-stage">
+
+              <!-- Smartphone Frame -->
+              <div class="mobile-phone-frame" aria-hidden="true">
+                <div class="mobile-phone-speaker"></div>
+                <div class="mobile-screen-content">
+
+                  <div class="mobile-ui-appbar">
+                    <div style="width: 40px; height: 6px; background: #1d4ed8; border-radius: 3px;"></div>
+                    <div class="mobile-avatar-circle"></div>
+                  </div>
+
+                  <!-- Portfolio Balance Card -->
+                  <div class="mobile-app-balance-card">
+                    <div class="balance-pill"></div>
+                    <div class="balance-val"></div>
+                    <div class="balance-sub"></div>
+                  </div>
+
+                  <!-- Trading Chart Wireframe -->
+                  <div class="mobile-chart-box">
+                    <svg class="chart-svg-wireframe" viewBox="0 0 160 45" fill="none">
+                      <path d="M5 38 L35 28 L65 32 L95 18 L125 22 L155 8" stroke="#1D4ED8" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                      <circle cx="155" cy="8" r="3" fill="#1D4ED8" />
+                    </svg>
+                  </div>
+
+                  <!-- Buy / Sell Action Pills -->
+                  <div class="mobile-action-pills">
+                    <div class="action-pill-btn"></div>
+                    <div class="action-pill-btn sec"></div>
+                  </div>
+
+                  <!-- Market Asset List Rows -->
+                  <div class="mobile-asset-rows">
+                    <div class="mobile-asset-item">
+                      <div class="asset-icon-circle"></div>
+                      <div class="asset-line-mock"></div>
+                      <div class="asset-sparkline-mock"></div>
+                    </div>
+                    <div class="mobile-asset-item">
+                      <div class="asset-icon-circle" style="background: #0284c7;"></div>
+                      <div class="asset-line-mock"></div>
+                      <div class="asset-sparkline-mock"></div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+            <div class="project-details">
+              <span class="project-category-badge">Trading & Investment App</span>
+              <h3 class="project-title">Capital Plus Trading App</h3>
+              <p class="project-desc">
+                A mobile application built for investment tracking, real-time market data viewing, and account activity
+                monitoring.
+              </p>
+            </div>
+          </article>
+
+          <!-- PROJECT 02: Portfolio Plus (Desktop Browser Wireframe Prototype) -->
+          <article class="project-card reveal reveal-delay-1">
+            <div class="project-visual-stage">
+
+              <!-- Desktop Browser Frame -->
+              <div class="browser-web-frame" aria-hidden="true">
+                <div class="browser-mockup-top">
+                  <div class="browser-controls">
+                    <span class="browser-dot red"></span>
+                    <span class="browser-dot yellow"></span>
+                    <span class="browser-dot green"></span>
+                  </div>
+                  <div class="browser-address">https://portfolioplus.portal</div>
+                </div>
+
+                <div class="browser-viewport-layout">
+                  <!-- Sidebar Wireframe -->
+                  <div class="browser-sidebar-wireframe">
+                    <div class="sidebar-icon-block active"></div>
+                    <div class="sidebar-icon-block"></div>
+                    <div class="sidebar-icon-block"></div>
+                  </div>
+
+                  <!-- Main Dashboard Wireframe -->
+                  <div class="browser-main-wireframe">
+                    <div class="dashboard-header-wireframe">
+                      <div class="dash-title-bar"></div>
+                      <div class="dash-filter-pill"></div>
+                    </div>
+
+                    <!-- KPI Metric Cards -->
+                    <div class="kpi-cards-row">
+                      <div class="kpi-wireframe-card">
+                        <div class="kpi-bar-label"></div>
+                        <div class="kpi-bar-val"></div>
+                      </div>
+                      <div class="kpi-wireframe-card">
+                        <div class="kpi-bar-label"></div>
+                        <div class="kpi-bar-val sec"></div>
+                      </div>
+                      <div class="kpi-wireframe-card">
+                        <div class="kpi-bar-label"></div>
+                        <div class="kpi-bar-val ter"></div>
+                      </div>
+                    </div>
+
+                    <!-- Asset Distribution Bar Wireframe -->
+                    <div class="dashboard-chart-wireframe">
+                      <div class="chart-bar-group">
+                        <div class="chart-bar-label"></div>
+                        <div class="chart-progress-track">
+                          <div class="chart-progress-fill w-75"></div>
+                        </div>
+                      </div>
+                      <div class="chart-bar-group">
+                        <div class="chart-bar-label"></div>
+                        <div class="chart-progress-track">
+                          <div class="chart-progress-fill w-50"></div>
+                        </div>
+                      </div>
+                      <div class="chart-bar-group">
+                        <div class="chart-bar-label"></div>
+                        <div class="chart-progress-track">
+                          <div class="chart-progress-fill w-35"></div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="project-details">
+              <span class="project-category-badge">Client Portal</span>
+              <h3 class="project-title">Portfolio Plus</h3>
+              <p class="project-desc">
+                A web portal giving clients clear visibility into their holdings, asset distribution, performance
+                summaries, and account statements.
+              </p>
+            </div>
+          </article>
+
+          <!-- PROJECT 03: Custom HRMS (Desktop Browser Wireframe Prototype) -->
+          <article class="project-card reveal">
+            <div class="project-visual-stage">
+
+              <!-- Desktop Browser Frame -->
+              <div class="browser-web-frame" aria-hidden="true">
+                <div class="browser-mockup-top">
+                  <div class="browser-controls">
+                    <span class="browser-dot red"></span>
+                    <span class="browser-dot yellow"></span>
+                    <span class="browser-dot green"></span>
+                  </div>
+                  <div class="browser-address">https://hrms.quanticus.internal</div>
+                </div>
+
+                <div class="browser-viewport-layout">
+                  <!-- Sidebar Wireframe -->
+                  <div class="browser-sidebar-wireframe">
+                    <div class="sidebar-icon-block active"></div>
+                    <div class="sidebar-icon-block"></div>
+                    <div class="sidebar-icon-block"></div>
+                  </div>
+
+                  <!-- Main Dashboard Wireframe -->
+                  <div class="browser-main-wireframe">
+                    <div class="dashboard-header-wireframe">
+                      <div class="dash-title-bar" style="width: 70px;"></div>
+                      <div class="dash-filter-pill" style="width: 48px;"></div>
+                    </div>
+
+                    <!-- KPI Metric Cards -->
+                    <div class="kpi-cards-row">
+                      <div class="kpi-wireframe-card">
+                        <div class="kpi-bar-label" style="width: 60%;"></div>
+                        <div class="kpi-bar-val"></div>
+                      </div>
+                      <div class="kpi-wireframe-card">
+                        <div class="kpi-bar-label" style="width: 45%;"></div>
+                        <div class="kpi-bar-val sec"></div>
+                      </div>
+                      <div class="kpi-wireframe-card">
+                        <div class="kpi-bar-label" style="width: 50%;"></div>
+                        <div class="kpi-bar-val ter"></div>
+                      </div>
+                    </div>
+
+                    <!-- Employee Directory & Status Rows -->
+                    <div class="hrms-employee-grid">
+                      <div class="hrms-emp-row">
+                        <div class="hrms-emp-info">
+                          <div class="hrms-avatar"></div>
+                          <div class="hrms-emp-name"></div>
+                        </div>
+                        <div class="hrms-status-tag"></div>
+                      </div>
+                      <div class="hrms-emp-row">
+                        <div class="hrms-emp-info">
+                          <div class="hrms-avatar" style="background: #0284c7;"></div>
+                          <div class="hrms-emp-name" style="width: 56px;"></div>
+                        </div>
+                        <div class="hrms-status-tag"></div>
+                      </div>
+                      <div class="hrms-emp-row">
+                        <div class="hrms-emp-info">
+                          <div class="hrms-avatar" style="background: #3b82f6;"></div>
+                          <div class="hrms-emp-name" style="width: 42px;"></div>
+                        </div>
+                        <div class="hrms-status-tag leave"></div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="project-details">
+              <span class="project-category-badge">Internal Operations</span>
+              <h3 class="project-title">Custom HRMS</h3>
+              <p class="project-desc">
+                A Frappe-based internal system managing employee records, attendance, leave approvals, and
+                organizational directories.
+              </p>
+            </div>
+          </article>
+
+          <!-- PROJECT 04: CRM (Desktop Browser Wireframe Prototype) -->
+          <article class="project-card reveal reveal-delay-1">
+            <div class="project-visual-stage">
+
+              <!-- Desktop Browser Frame -->
+              <div class="browser-web-frame" aria-hidden="true">
+                <div class="browser-mockup-top">
+                  <div class="browser-controls">
+                    <span class="browser-dot red"></span>
+                    <span class="browser-dot yellow"></span>
+                    <span class="browser-dot green"></span>
+                  </div>
+                  <div class="browser-address">https://crm.pipeline.platform</div>
+                </div>
+
+                <div class="browser-viewport-layout">
+                  <!-- Sidebar Wireframe -->
+                  <div class="browser-sidebar-wireframe">
+                    <div class="sidebar-icon-block active"></div>
+                    <div class="sidebar-icon-block"></div>
+                    <div class="sidebar-icon-block"></div>
+                  </div>
+
+                  <!-- Main CRM Pipeline View -->
+                  <div class="browser-main-wireframe">
+                    <div class="dashboard-header-wireframe">
+                      <div class="dash-title-bar" style="width: 75px;"></div>
+                      <div class="dash-filter-pill" style="width: 35px;"></div>
+                    </div>
+
+                    <!-- Pipeline Kanban Columns -->
+                    <div class="crm-pipeline-row">
+                      <div class="crm-pipeline-col">
+                        <div class="crm-col-header">
+                          <div class="crm-col-title"></div>
+                        </div>
+                        <div class="crm-deal-card">
+                          <div class="crm-deal-title"></div>
+                          <div class="crm-deal-val"></div>
+                        </div>
+                        <div class="crm-deal-card">
+                          <div class="crm-deal-title" style="width: 65%;"></div>
+                          <div class="crm-deal-val" style="width: 40%; background: #0284c7;"></div>
+                        </div>
+                      </div>
+
+                      <div class="crm-pipeline-col">
+                        <div class="crm-col-header">
+                          <div class="crm-col-title" style="width: 28px;"></div>
+                        </div>
+                        <div class="crm-deal-card">
+                          <div class="crm-deal-title" style="width: 70%;"></div>
+                          <div class="crm-deal-val" style="background: #3b82f6;"></div>
+                        </div>
+                      </div>
+
+                      <div class="crm-pipeline-col">
+                        <div class="crm-col-header">
+                          <div class="crm-col-title" style="width: 25px;"></div>
+                        </div>
+                        <div class="crm-deal-card">
+                          <div class="crm-deal-title" style="width: 85%;"></div>
+                          <div class="crm-deal-val" style="background: #10b981;"></div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="project-details">
+              <span class="project-category-badge">Sales & Relationship Tool</span>
+              <h3 class="project-title">CRM Platform</h3>
+              <p class="project-desc">
+                A centralized platform for tracking business leads, pipeline stages, client conversations, and follow-up
+                tasks.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         5. PROCESS / HOW WE WORK SECTION
+         ======================================================================= -->
+    <section class="section" id="process" aria-labelledby="processSectionTitle">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <div class="section-identity">
+            <div class="identity-icon-box" aria-hidden="true">
+              <svg class="identity-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="6" cy="6" r="3" />
+                <circle cx="6" cy="18" r="3" />
+                <circle cx="18" cy="12" r="3" />
+                <line x1="8.5" y1="7.5" x2="15.5" y2="10.5" />
+                <line x1="8.5" y1="16.5" x2="15.5" y2="13.5" />
+              </svg>
+            </div>
+            <span class="identity-label">How We Work</span>
+          </div>
+          <h2 class="section-title" id="processSectionTitle">How We Work</h2>
+          <p class="section-description">From first chat to working software.</p>
+        </div>
+
+        <div class="process-journey" id="processJourney">
+
+          <!-- Step 01: UNDERSTAND -->
+          <div class="process-step-card">
+            <div class="process-icon-tile" aria-hidden="true">
+              <svg class="process-animated-icon icon-understand" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path class="icon-draw-path bubble-back" d="M14 6h3a3 3 0 0 1 3 3v3.5a3 3 0 0 1-3 3h-1l-2.5 2V15.5" />
+                <path class="icon-draw-path bubble-front" d="M4 8.5A3.5 3.5 0 0 1 7.5 5h6A3.5 3.5 0 0 1 17 8.5v3a3.5 3.5 0 0 1-3.5 3.5H9l-3.5 2.5v-2.5A3.5 3.5 0 0 1 4 11.5v-3z" />
+                <circle class="speech-dot dot-1" cx="8" cy="10" r="0.8" fill="currentColor" stroke="none" />
+                <circle class="speech-dot dot-2" cx="10.5" cy="10" r="0.8" fill="currentColor" stroke="none" />
+                <circle class="speech-dot dot-3" cx="13" cy="10" r="0.8" fill="currentColor" stroke="none" />
+              </svg>
+            </div>
+            <h3 class="process-step-title">UNDERSTAND</h3>
+            <p class="process-step-desc">We listen first. We learn what isn't working and what you need.</p>
+
+            <div class="process-arrow-indicator" aria-hidden="true">
+              <svg class="arrow-icon-desktop" width="14" height="14" viewBox="0 0 16 16" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 12L10 8L6 4" />
+              </svg>
+              <svg class="arrow-icon-mobile" width="14" height="14" viewBox="0 0 16 16" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 6L8 10L12 6" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Step 02: PLAN -->
+          <div class="process-step-card">
+            <div class="process-icon-tile" aria-hidden="true">
+              <svg class="process-animated-icon icon-plan" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <rect class="icon-draw-path plan-frame" x="3.5" y="3.5" width="17" height="17" rx="3.5" />
+                <line class="icon-draw-path plan-line line-1" x1="11" y1="8" x2="16.5" y2="8" />
+                <line class="icon-draw-path plan-line line-2" x1="11" y1="12" x2="16.5" y2="12" />
+                <line class="icon-draw-path plan-line line-3" x1="11" y1="16" x2="16.5" y2="16" />
+                <path class="icon-draw-path plan-tick tick-1" d="M6.5 8l1.2 1.2 2-2" />
+                <path class="icon-draw-path plan-tick tick-2" d="M6.5 12l1.2 1.2 2-2" />
+                <path class="icon-draw-path plan-tick tick-3" d="M6.5 16l1.2 1.2 2-2" />
+              </svg>
+            </div>
+            <h3 class="process-step-title">PLAN</h3>
+            <p class="process-step-desc">We agree what to build and in what order, before any code is written.</p>
+
+            <div class="process-arrow-indicator" aria-hidden="true">
+              <svg class="arrow-icon-desktop" width="14" height="14" viewBox="0 0 16 16" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 12L10 8L6 4" />
+              </svg>
+              <svg class="arrow-icon-mobile" width="14" height="14" viewBox="0 0 16 16" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 6L8 10L12 6" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Step 03: BUILD -->
+          <div class="process-step-card">
+            <div class="process-icon-tile" aria-hidden="true">
+              <svg class="process-animated-icon icon-build" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path class="icon-draw-path bracket-left" d="M7.5 7.5L3.5 12l4 4.5" />
+                <path class="icon-draw-path bracket-right" d="M16.5 7.5L20.5 12l-4 4.5" />
+                <line class="icon-draw-path code-slash" x1="13.5" y1="6.5" x2="10.5" y2="17.5" />
+                <line class="cursor-blink" x1="12" y1="8.5" x2="12" y2="15.5" />
+              </svg>
+            </div>
+            <h3 class="process-step-title">BUILD</h3>
+            <p class="process-step-desc">We build in small steps and show you progress as we go.</p>
+
+            <div class="process-arrow-indicator" aria-hidden="true">
+              <svg class="arrow-icon-desktop" width="14" height="14" viewBox="0 0 16 16" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 12L10 8L6 4" />
+              </svg>
+              <svg class="arrow-icon-mobile" width="14" height="14" viewBox="0 0 16 16" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 6L8 10L12 6" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Step 04: SUPPORT & EVOLVE -->
+          <div class="process-step-card">
+            <div class="process-icon-tile" aria-hidden="true">
+              <span class="shield-pulse-ring" aria-hidden="true"></span>
+              <svg class="process-animated-icon icon-support" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path class="icon-draw-path shield-body" d="M12 21.5s7-3.5 7-9V5.5L12 3 5 5.5v7c0 5.5 7 9 7 9z" />
+                <path class="icon-draw-path shield-tick" d="M9 12l2 2 4-4" />
+              </svg>
+            </div>
+            <h3 class="process-step-title">SUPPORT & EVOLVE</h3>
+            <p class="process-step-desc">We keep it running and improve it as your needs change.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         7. CAREERS SECTION
+         ======================================================================= -->
+    <section class="section section-subtle-bg careers-section" id="careers" aria-labelledby="careersSectionTitle">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <div class="section-identity">
+            <div class="identity-icon-box" aria-hidden="true">
+              <svg class="identity-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
+                <path
+                  d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
+                <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
+                <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
+              </svg>
+            </div>
+            <span class="identity-label">Careers</span>
+          </div>
+          <h2 class="section-title" id="careersSectionTitle">Join Our Team</h2>
+          <p class="section-description">
+            We are always looking for practical problem-solvers who take pride in writing clean code and building
+            reliable systems.
+          </p>
+        </div>
+
+        <div class="careers-grid">
+
+          <!-- Role 1: Software Developer (Available) -->
+          <article class="career-card available reveal">
+            <div class="career-card-top">
+              <div class="career-role-info">
+                <h3 class="career-role-title">Software Developer</h3>
+                <span class="career-role-type">Engineering & Development</span>
+              </div>
+              <div class="status-badge available">
+                <span class="status-dot"></span>
+                <span>Currently Available</span>
+              </div>
+            </div>
+
+            <p class="career-desc">
+              Build and maintain web applications, internal tools, and backend services used across our group
+              businesses.
+            </p>
+
+            <div class="career-card-footer">
+              <span class="tag-badge">Engineering</span>
+              <button type="button" class="btn btn-primary btn-apply-action"
+                data-open-career-modal="Software Developer">
+                <span>Apply Now</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Role 2: IT Support (No Openings) -->
+          <article class="career-card reveal reveal-delay-1">
+            <div class="career-card-top">
+              <div class="career-role-info">
+                <h3 class="career-role-title">IT Support</h3>
+                <span class="career-role-type">Support & Infrastructure</span>
+              </div>
+              <div class="status-badge no-openings">
+                <span class="status-dot"></span>
+                <span>Currently No Openings</span>
+              </div>
+            </div>
+
+            <p class="career-desc">
+              Handle hardware, system setups, network troubleshooting, and day-to-day technical assistance for our
+              teams.
+            </p>
+
+            <div class="career-card-footer">
+              <span class="tag-badge">Operations</span>
+              <button type="button" class="btn btn-closed-action" disabled>
+                <span>No Openings</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Role 3: Delivery Manager (No Openings) -->
+          <article class="career-card reveal reveal-delay-2">
+            <div class="career-card-top">
+              <div class="career-role-info">
+                <h3 class="career-role-title">Delivery Manager</h3>
+                <span class="career-role-type">Project & Delivery Leadership</span>
+              </div>
+              <div class="status-badge no-openings">
+                <span class="status-dot"></span>
+                <span>Currently No Openings</span>
+              </div>
+            </div>
+
+            <p class="career-desc">
+              Keep projects on track, coordinate between business stakeholders and engineers, and ensure smooth
+              delivery.
+            </p>
+
+            <div class="career-card-footer">
+              <span class="tag-badge">Management</span>
+              <button type="button" class="btn btn-closed-action" disabled>
+                <span>No Openings</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Role 4: Internships (Available) -->
+          <article class="career-card available reveal reveal-delay-3">
+            <div class="career-card-top">
+              <div class="career-role-info">
+                <h3 class="career-role-title">Internships</h3>
+                <span class="career-role-type">Emerging Talent & Graduates</span>
+              </div>
+              <div class="status-badge available">
+                <span class="status-dot"></span>
+                <span>Currently Available</span>
+              </div>
+            </div>
+
+            <p class="career-desc">
+              Work alongside our developers on live systems and build practical software engineering experience.
+            </p>
+
+            <div class="career-card-footer">
+              <span class="tag-badge">Early Career</span>
+              <button type="button" class="btn btn-primary btn-apply-action" data-open-career-modal="Internships">
+                <span>Apply Now</span>
+              </button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         8. OUR DIRECTORS SECTION
+         ======================================================================= -->
+    <section class="section" id="directors" aria-labelledby="directorsSectionTitle">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <div class="section-identity">
+            <div class="identity-icon-box" aria-hidden="true">
+              <svg class="identity-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </div>
+            <span class="identity-label">Leadership</span>
+          </div>
+          <h2 class="section-title" id="directorsSectionTitle">Our Directors</h2>
+        </div>
+
+        <!-- Expanding Image Accordion (Horizontal on Desktop, Vertical on Mobile) -->
+        <div class="dir-accordion" id="directorsAccordion">
+
+          <!-- Director 1: Dileep Keerthi Kumar -->
+          <div class="dir-panel-wrapper is-expanded" style="--dir-index: 0;">
+            <article class="dir-panel" role="button" tabindex="0" aria-label="Dileep Keerthi Kumar, Director"
+              aria-expanded="true">
+              <div class="dir-visual">
+                <div class="dir-avatar-placeholder">
+                  <svg class="dir-silhouette-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true">
+                    <circle cx="40" cy="28" r="14" fill="currentColor" fill-opacity="0.12" stroke="currentColor"
+                      stroke-width="2" />
+                    <path d="M16 68c0-13.255 10.745-24 24-24s24 10.745 24 24" fill="currentColor" fill-opacity="0.12"
+                      stroke="currentColor" stroke-width="2" />
+                  </svg>
+                  <span class="dir-initials-badge">DK</span>
+                </div>
+              </div>
+              <div class="dir-overlay-blur" aria-hidden="true"></div>
+              <div class="dir-scrim" aria-hidden="true"></div>
+              <div class="dir-content">
+                <div class="dir-text-group">
+                  <h3 class="dir-name">Dileep Keerthi Kumar</h3>
+                  <div class="dir-role">Director</div>
+                </div>
+                <div class="dir-toggle-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Director 2: Parameswaran Sathesh -->
+          <div class="dir-panel-wrapper" style="--dir-index: 1;">
+            <article class="dir-panel" role="button" tabindex="0" aria-label="Parameswaran Sathesh, Director"
+              aria-expanded="false">
+              <div class="dir-visual">
+                <div class="dir-avatar-placeholder">
+                  <svg class="dir-silhouette-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true">
+                    <circle cx="40" cy="28" r="14" fill="currentColor" fill-opacity="0.12" stroke="currentColor"
+                      stroke-width="2" />
+                    <path d="M16 68c0-13.255 10.745-24 24-24s24 10.745 24 24" fill="currentColor" fill-opacity="0.12"
+                      stroke="currentColor" stroke-width="2" />
+                  </svg>
+                  <span class="dir-initials-badge">PS</span>
+                </div>
+              </div>
+              <div class="dir-overlay-blur" aria-hidden="true"></div>
+              <div class="dir-scrim" aria-hidden="true"></div>
+              <div class="dir-content">
+                <div class="dir-text-group">
+                  <h3 class="dir-name">Parameswaran Sathesh</h3>
+                  <div class="dir-role">Director</div>
+                </div>
+                <div class="dir-toggle-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Director 3: Srinivasan Anand -->
+          <div class="dir-panel-wrapper" style="--dir-index: 2;">
+            <article class="dir-panel" role="button" tabindex="0" aria-label="Srinivasan Anand, Director"
+              aria-expanded="false">
+              <div class="dir-visual">
+                <div class="dir-avatar-placeholder">
+                  <svg class="dir-silhouette-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true">
+                    <circle cx="40" cy="28" r="14" fill="currentColor" fill-opacity="0.12" stroke="currentColor"
+                      stroke-width="2" />
+                    <path d="M16 68c0-13.255 10.745-24 24-24s24 10.745 24 24" fill="currentColor" fill-opacity="0.12"
+                      stroke="currentColor" stroke-width="2" />
+                  </svg>
+                  <span class="dir-initials-badge">SA</span>
+                </div>
+              </div>
+              <div class="dir-overlay-blur" aria-hidden="true"></div>
+              <div class="dir-scrim" aria-hidden="true"></div>
+              <div class="dir-content">
+                <div class="dir-text-group">
+                  <h3 class="dir-name">Srinivasan Anand</h3>
+                  <div class="dir-role">Director</div>
+                </div>
+                <div class="dir-toggle-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Director 4: Anish Gupta -->
+          <div class="dir-panel-wrapper" style="--dir-index: 3;">
+            <article class="dir-panel" role="button" tabindex="0" aria-label="Anish Gupta, Director"
+              aria-expanded="false">
+              <div class="dir-visual">
+                <div class="dir-avatar-placeholder">
+                  <svg class="dir-silhouette-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true">
+                    <circle cx="40" cy="28" r="14" fill="currentColor" fill-opacity="0.12" stroke="currentColor"
+                      stroke-width="2" />
+                    <path d="M16 68c0-13.255 10.745-24 24-24s24 10.745 24 24" fill="currentColor" fill-opacity="0.12"
+                      stroke="currentColor" stroke-width="2" />
+                  </svg>
+                  <span class="dir-initials-badge">AG</span>
+                </div>
+              </div>
+              <div class="dir-overlay-blur" aria-hidden="true"></div>
+              <div class="dir-scrim" aria-hidden="true"></div>
+              <div class="dir-content">
+                <div class="dir-text-group">
+                  <h3 class="dir-name">Anish Gupta</h3>
+                  <div class="dir-role">Director</div>
+                </div>
+                <div class="dir-toggle-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Subtle Elegant Section Divider Between Directors & Contact -->
+    <div class="section-separator-container container" aria-hidden="true">
+      <div class="subtle-section-separator"></div>
+    </div>
+
+    <!-- =======================================================================
+         9. CONTACT SECTION
+         ======================================================================= -->
+    <section class="section section-contact" id="contact" aria-labelledby="contactSectionTitle">
+      <div class="container">
+
+        <div class="contact-wrapper reveal">
+          <div class="contact-grid">
+
+            <!-- Contact Info Column -->
+            <div class="contact-info-col">
+              <div class="section-identity">
+                <div class="identity-icon-box" aria-hidden="true">
+                  <svg class="identity-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                  </svg>
+                </div>
+                <span class="identity-label">Contact</span>
+              </div>
+              <h2 class="contact-heading" id="contactSectionTitle">Let's Talk.</h2>
+              <p class="contact-desc">
+                Have a project or technical requirement to discuss? Send us a note and our team will get back to you
+                directly.
+              </p>
+
+              <!-- Official Quanticus Contact Details -->
+              <div class="contact-info-list">
+                <!-- Address -->
+                <div class="contact-info-item">
+                  <div class="contact-item-icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                  </div>
+                  <div class="contact-item-meta">
+                    <span class="contact-item-label">Address</span>
+                    <address class="contact-item-value contact-address-value">
+                      2nd Floor, Meerlan Towers,<br>
+                      33, Hanumantha Road,<br>
+                      Royapettah, Chennai,<br>
+                      Tamil Nadu, 600014, India
+                    </address>
+                  </div>
+                </div>
+
+                <!-- Email -->
+                <a href="mailto:support@quanticustech.com" class="contact-info-item contact-link-item">
+                  <div class="contact-item-icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                  </div>
+                  <div class="contact-item-meta">
+                    <span class="contact-item-label">Email</span>
+                    <span class="contact-item-value">support@quanticustech.com</span>
+                  </div>
+                </a>
+
+                <!-- Phone -->
+                <a href="tel:+919150021424" class="contact-info-item contact-link-item">
+                  <div class="contact-item-icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="contact-item-meta">
+                    <span class="contact-item-label">Phone</span>
+                    <span class="contact-item-value">+91 91500 21424</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!-- Interactive Conversation Starter Form Card -->
+            <div class="contact-form-card">
+              <form id="contactForm" aria-label="Conversation Starter Form">
+                <!-- Honeypot field to trap spambots -->
+                <div style="position: absolute; left: -9999px; opacity: 0; pointer-events: none;" aria-hidden="true">
+                  <input type="text" name="website" id="contactWebsiteHoneypot" tabindex="-1" autocomplete="off">
+                </div>
+
+                <div class="form-group">
+                  <label for="contactName" class="form-label">Full Name</label>
+                  <input type="text" id="contactName" class="form-control" placeholder="Your name" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="contactEmail" class="form-label">Business Email</label>
+                  <input type="email" id="contactEmail" class="form-control" placeholder="name@company.com" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="contactRequirement" class="form-label">Requirement Area</label>
+                  <select id="contactRequirement" class="form-control">
+                    <option value="web-mobile">Web & Mobile Applications</option>
+                    <option value="enterprise">Enterprise Software & ERP</option>
+                    <option value="api-integration">Systems Integration & APIs</option>
+                    <option value="it-support">IT Infrastructure & Support</option>
+                    <option value="general">General Inquiry</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="contactMessage" class="form-label">How can we help?</label>
+                  <textarea id="contactMessage" class="form-control"
+                    placeholder="Tell us about what you need built, improved, or supported..." required></textarea>
+                </div>
+
+                <button type="submit" id="submitBtn" class="btn btn-primary form-submit-btn">
+                  <span>Send Message</span>
+                  <svg class="btn-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true">
+                    <path d="M2 8H14M14 8L9 3M14 8L9 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+
+                <div id="formStatusMsg" class="form-status-msg" role="status" aria-live="polite"></div>
+              </form>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       SITE FOOTER (QUANTICUS LOGO ASSET)
+       ========================================================================= -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <!-- Footer Logo using Quanticus Logo Asset on White Plate -->
+          <a href="#home" class="footer-brand-logo" aria-label="Quanticus Home">
+            <span class="logo-plate footer-logo-plate">
+              <img src="assets/quanticus-logo.png" alt="Quanticus" class="footer-logo-img" width="168" height="42">
+            </span>
+            <span class="brand-slogan footer-brand-slogan">Build What's Next.</span>
+          </a>
+          <p class="footer-brand-desc">
+            The dedicated technology team behind a group of established businesses. We build and maintain custom
+            software, web platforms, and operational tools.
+          </p>
+        </div>
+
+        <div class="footer-links-col">
+          <div class="footer-heading">Navigation</div>
+          <ul class="footer-links-list">
+            <li><a href="#home" class="footer-link">Home</a></li>
+            <li><a href="#about" class="footer-link">About Quanticus</a></li>
+            <li><a href="#services" class="footer-link">Services</a></li>
+            <li><a href="#work" class="footer-link">Work</a></li>
+            <li><a href="#process" class="footer-link">How We Work</a></li>
+            <li><a href="#careers" class="footer-link">Careers</a></li>
+            <li><a href="#directors" class="footer-link">Our Directors</a></li>
+            <li><a href="#contact" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-address-col">
+          <div class="footer-heading">Address</div>
+          <address class="footer-address-block">
+            2nd Floor, Meerlan Towers,<br>
+            33, Hanumantha Road,<br>
+            Royapettah, Chennai,<br>
+            Tamil Nadu, 600014, India
+          </address>
+          <div class="footer-contact-details">
+            <div class="footer-contact-row">
+              <span class="footer-contact-label">Email:</span>
+              <a href="mailto:support@quanticustech.com"
+                class="footer-link footer-contact-link">support@quanticustech.com</a>
+            </div>
+            <div class="footer-contact-row">
+              <span class="footer-contact-label">Phone:</span>
+              <a href="tel:+919150021424" class="footer-link footer-contact-link">+91 91500 21424</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          &copy; 2024–2026 Quanticus Software Solutions. All rights reserved.
+        </div>
+        <a href="#home" id="backToTopBtn" class="back-to-top-btn" aria-label="Back to top of page">
+          <span>Back to Top</span>
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 12V4M4 8l4-4 4 4" />
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       CAREER APPLICATION MODAL
+       ========================================================================= -->
+  <div class="modal-backdrop" id="careerModal" role="dialog" aria-modal="true" aria-labelledby="careerModalTitle"
+    aria-hidden="true">
+    <div class="modal-container">
+      <button type="button" class="modal-close-btn" data-close-modal aria-label="Close application modal">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="modal-header">
+        <div class="modal-eyebrow">Job Application</div>
+        <h2 class="modal-title" id="careerModalTitle">Apply for <span id="careerModalRoleText">Role</span></h2>
+        <p class="modal-subtitle">Submit your details and resume below. We review every application directly.
+        </p>
+      </div>
+
+      <form class="modal-form" id="careerModalForm">
+        <input type="hidden" id="careerSelectedRole" name="role" value="">
+        <input type="hidden" id="careerSelectedRoleId" name="role_id" value="">
+        <!-- Honeypot field to trap spambots -->
+        <div style="position: absolute; left: -9999px; opacity: 0; pointer-events: none;" aria-hidden="true">
+          <input type="text" name="company_fax" id="careerCompanyFaxHoneypot" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="form-group">
+          <label for="careerName" class="form-label">Full Name</label>
+          <input type="text" id="careerName" class="form-control" placeholder="Your full name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="careerEmail" class="form-label">Email Address</label>
+          <input type="email" id="careerEmail" class="form-control" placeholder="name@domain.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="careerPhone" class="form-label">Phone Number</label>
+          <input type="tel" id="careerPhone" class="form-control" placeholder="+91 98765 43210" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Resume / CV (PDF or DOCX, max 4MB)</label>
+          <div class="file-upload-box" id="resumeUploadBox">
+            <input type="file" id="careerResume" class="file-upload-input" accept=".pdf,.doc,.docx" required>
+            <div class="file-upload-label">
+              <svg class="file-upload-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="17 8 12 3 7 8"></polyline>
+                <line x1="12" y1="3" x2="12" y2="15"></line>
+              </svg>
+              <span id="fileUploadPrompt">Click to browse or drag & drop resume</span>
+              <span id="fileNameDisplay" class="file-upload-name" style="display: none;"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="careerCoverMessage" class="form-label">Cover Message <span
+              style="font-weight: 400; color: var(--color-text-muted); font-size: 0.8rem;">(Optional)</span></label>
+          <textarea id="careerCoverMessage" class="form-control"
+            placeholder="Tell us a bit about your background and what you are looking for..."></textarea>
+        </div>
+
+        <button type="submit" id="careerSubmitBtn" class="btn btn-primary form-submit-btn">
+          <span>Submit Application</span>
+          <svg class="btn-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M2 8H14M14 8L9 3M14 8L9 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+
+        <div id="careerStatusMsg" class="form-status-msg" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/app.js"></script>
+</body>
+
+</html>
