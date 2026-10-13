@@ -937,45 +937,8 @@
 /* --------------------------------------------------------------------------
    5. WORK SECTION (CURATED PROJECTS MARQUEE)
    -------------------------------------------------------------------------- */
-.work-marquee-controls {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 1.5rem;
-}
-
-.btn-marquee-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.4rem 0.95rem;
-  font-family: var(--font-body);
-  font-size: 0.8125rem;
-  font-weight: 500;
-  color: var(--color-text-secondary);
-  background-color: #ffffff;
-  border: 1px solid var(--color-border-subtle);
-  border-radius: var(--radius-full);
-  box-shadow: var(--shadow-xs);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.btn-marquee-toggle:hover {
-  color: var(--color-brand-primary);
-  border-color: var(--color-brand-subtle);
-  background-color: var(--color-brand-light);
-  box-shadow: var(--shadow-sm);
-}
-
-.btn-marquee-toggle:focus-visible {
-  outline: 2px solid var(--color-brand-primary);
-  outline-offset: 2px;
-}
-
-.btn-marquee-toggle .marquee-btn-icon {
-  flex-shrink: 0;
+#work .section-header {
+  margin-bottom: clamp(1.75rem, 3.5vw, 2.5rem);
 }
 
 /* Container & Entrance Animation */
@@ -1043,10 +1006,9 @@
   }
 }
 
-/* Pause triggers: hover, keyboard focus, active touch, toggle button, offscreen, tab hidden */
+/* Pause triggers: hover, keyboard focus, active touch, offscreen, tab hidden */
 .work-marquee-viewport:hover .work-marquee-track,
 .work-marquee-viewport:focus-within .work-marquee-track,
-.work-marquee-container.is-paused .work-marquee-track,
 .work-marquee-container.is-offscreen .work-marquee-track,
 .work-marquee-container.is-tab-hidden .work-marquee-track,
 .work-marquee-track.is-touching {
@@ -1115,10 +1077,6 @@
 
 /* Mobile adjustments (below 768px): card width ~260px, lighter gradient edges */
 @media (max-width: 767.98px) {
-  .work-marquee-controls {
-    margin-bottom: 1rem;
-  }
-
   .work-card {
     width: 260px;
     flex: 0 0 260px;
@@ -1169,10 +1127,6 @@
     display: none !important;
   }
 
-  .work-marquee-controls {
-    display: none !important;
-  }
-
   .work-marquee-track.track-reverse {
     display: none !important;
   }
@@ -1202,8 +1156,8 @@
   flex-direction: column;
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
-              transform 600ms cubic-bezier(0.16, 1, 0.3, 1),
+  transition: opacity 400ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 400ms cubic-bezier(0.16, 1, 0.3, 1),
               border-color var(--transition-normal),
               box-shadow var(--transition-normal);
 }
@@ -1218,19 +1172,19 @@
 .process-journey.is-visible .process-step-card:nth-child(2) {
   opacity: 1;
   transform: translateY(0);
-  transition-delay: 400ms;
+  transition-delay: 280ms;
 }
 
 .process-journey.is-visible .process-step-card:nth-child(3) {
   opacity: 1;
   transform: translateY(0);
-  transition-delay: 800ms;
+  transition-delay: 560ms;
 }
 
 .process-journey.is-visible .process-step-card:nth-child(4) {
   opacity: 1;
   transform: translateY(0);
-  transition-delay: 1200ms;
+  transition-delay: 840ms;
 }
 
 /* Thin Blue Animated Connector Lines */
@@ -1246,22 +1200,22 @@
   transform-origin: left;
   z-index: 1;
   pointer-events: none;
-  transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .process-journey.is-visible .process-step-card:nth-child(1)::after {
   transform: translateY(-50%) scaleX(1);
-  transition-delay: 300ms;
+  transition-delay: 210ms;
 }
 
 .process-journey.is-visible .process-step-card:nth-child(2)::after {
   transform: translateY(-50%) scaleX(1);
-  transition-delay: 700ms;
+  transition-delay: 490ms;
 }
 
 .process-journey.is-visible .process-step-card:nth-child(3)::after {
   transform: translateY(-50%) scaleX(1);
-  transition-delay: 1100ms;
+  transition-delay: 770ms;
 }
 
 /* Hover effect on cards */
@@ -1293,26 +1247,26 @@
   justify-content: center;
   z-index: 2;
   box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
-  transition: transform 350ms cubic-bezier(0.34, 1.56, 0.64, 1),
-              opacity 200ms ease;
+  transition: transform 240ms cubic-bezier(0.34, 1.56, 0.64, 1),
+              opacity 140ms ease;
 }
 
 .process-journey.is-visible .process-step-card:nth-child(1) .process-arrow-indicator {
   transform: translateY(-50%) scale(1);
   opacity: 1;
-  transition-delay: 550ms;
+  transition-delay: 385ms;
 }
 
 .process-journey.is-visible .process-step-card:nth-child(2) .process-arrow-indicator {
   transform: translateY(-50%) scale(1);
   opacity: 1;
-  transition-delay: 950ms;
+  transition-delay: 665ms;
 }
 
 .process-journey.is-visible .process-step-card:nth-child(3) .process-arrow-indicator {
   transform: translateY(-50%) scale(1);
   opacity: 1;
-  transition-delay: 1350ms;
+  transition-delay: 945ms;
 }
 
 .process-arrow-indicator svg {
@@ -1357,9 +1311,9 @@
   overflow: visible;
 }
 
-/* Base Stroke Dash Animation Setup (Draw themselves ~700ms) */
+/* Base Stroke Dash Animation Setup (Draw themselves ~450ms) */
 .icon-draw-path {
-  transition: stroke-dashoffset 700ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition: stroke-dashoffset 450ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Specific Path Dash Lengths */
@@ -1413,65 +1367,65 @@
 /* Card 1: Understand */
 .process-journey.is-visible .icon-understand .bubble-back {
   stroke-dashoffset: 0;
-  transition-delay: 50ms;
+  transition-delay: 35ms;
 }
 
 .process-journey.is-visible .icon-understand .bubble-front {
   stroke-dashoffset: 0;
-  transition-delay: 150ms;
+  transition-delay: 105ms;
 }
 
 /* Card 2: Plan */
 .process-journey.is-visible .icon-plan .plan-frame {
   stroke-dashoffset: 0;
-  transition-delay: 450ms;
+  transition-delay: 315ms;
 }
 
 .process-journey.is-visible .icon-plan .plan-line {
   stroke-dashoffset: 0;
-  transition-delay: 600ms;
+  transition-delay: 420ms;
 }
 
 .process-journey.is-visible .icon-plan .tick-1 {
   stroke-dashoffset: 0;
-  transition-delay: 750ms;
+  transition-delay: 525ms;
 }
 
 .process-journey.is-visible .icon-plan .tick-2 {
   stroke-dashoffset: 0;
-  transition-delay: 900ms;
+  transition-delay: 630ms;
 }
 
 .process-journey.is-visible .icon-plan .tick-3 {
   stroke-dashoffset: 0;
-  transition-delay: 1050ms;
+  transition-delay: 735ms;
 }
 
 /* Card 3: Build */
 .process-journey.is-visible .icon-build .bracket-left {
   stroke-dashoffset: 0;
-  transition-delay: 850ms;
+  transition-delay: 595ms;
 }
 
 .process-journey.is-visible .icon-build .code-slash {
   stroke-dashoffset: 0;
-  transition-delay: 950ms;
+  transition-delay: 665ms;
 }
 
 .process-journey.is-visible .icon-build .bracket-right {
   stroke-dashoffset: 0;
-  transition-delay: 1050ms;
+  transition-delay: 735ms;
 }
 
 /* Card 4: Support & Evolve */
 .process-journey.is-visible .icon-support .shield-body {
   stroke-dashoffset: 0;
-  transition-delay: 1250ms;
+  transition-delay: 875ms;
 }
 
 .process-journey.is-visible .icon-support .shield-tick {
   stroke-dashoffset: 0;
-  transition-delay: 1450ms;
+  transition-delay: 1015ms;
 }
 
 /* --------------------------------------------------------------------------
@@ -1495,17 +1449,17 @@
 
 .process-journey.is-visible .icon-understand .dot-1 {
   animation: typingDots 1.5s ease-in-out infinite;
-  animation-delay: 700ms;
+  animation-delay: 490ms;
 }
 
 .process-journey.is-visible .icon-understand .dot-2 {
   animation: typingDots 1.5s ease-in-out infinite;
-  animation-delay: 900ms;
+  animation-delay: 630ms;
 }
 
 .process-journey.is-visible .icon-understand .dot-3 {
   animation: typingDots 1.5s ease-in-out infinite;
-  animation-delay: 1100ms;
+  animation-delay: 770ms;
 }
 
 /* 2. Blinking Cursor (Build) */
@@ -1530,7 +1484,7 @@
 .process-journey.is-visible .icon-build .cursor-blink {
   opacity: 1;
   animation: cursorBlink 1.1s steps(1) infinite;
-  animation-delay: 1300ms;
+  animation-delay: 910ms;
 }
 
 /* 3. Soft Pulsing Ring (Support & Evolve) */
@@ -1561,7 +1515,7 @@
 
 .process-journey.is-visible .shield-pulse-ring {
   animation: shieldPulse 3.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
-  animation-delay: 1750ms;
+  animation-delay: 1225ms;
 }
 
 /* Card Hover: Replay Draw Animation */
@@ -2221,7 +2175,7 @@ textarea.form-control {
 
   .process-journey.is-visible .process-step-card:nth-child(2)::after {
     transform: translateX(-50%) scaleY(1);
-    transition-delay: 700ms;
+    transition-delay: 490ms;
   }
 
   .process-step-card:nth-child(3) .process-arrow-indicator {
@@ -2242,6 +2196,27 @@ textarea.form-control {
 }
 
 @media (max-width: 768px) {
+  /* Mobile Performance: Remove heavy backdrop-filters, software blurs & fractal SVG noise */
+  .site-header {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .hero-noise-overlay {
+    display: none !important;
+  }
+
+  .hero-word {
+    filter: none !important;
+    will-change: opacity, transform;
+  }
+
+  .hero-btn-glass {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: #ffffff;
+  }
+
   .nav-brand-slogan {
     font-size: 10.5px;
     margin-top: 2px;
@@ -2315,17 +2290,17 @@ textarea.form-control {
 
   .process-journey.is-visible .process-step-card:nth-child(1)::after {
     transform: translateX(-50%) scaleY(1);
-    transition-delay: 250ms;
+    transition-delay: 180ms;
   }
 
   .process-journey.is-visible .process-step-card:nth-child(2)::after {
     transform: translateX(-50%) scaleY(1);
-    transition-delay: 700ms;
+    transition-delay: 490ms;
   }
 
   .process-journey.is-visible .process-step-card:nth-child(3)::after {
     transform: translateX(-50%) scaleY(1);
-    transition-delay: 1150ms;
+    transition-delay: 800ms;
   }
 
   .process-arrow-indicator {
@@ -2341,19 +2316,19 @@ textarea.form-control {
   .process-journey.is-visible .process-step-card:nth-child(1) .process-arrow-indicator {
     transform: translateX(-50%) scale(1) !important;
     opacity: 1 !important;
-    transition-delay: 550ms;
+    transition-delay: 385ms;
   }
 
   .process-journey.is-visible .process-step-card:nth-child(2) .process-arrow-indicator {
     transform: translateX(-50%) scale(1) !important;
     opacity: 1 !important;
-    transition-delay: 950ms;
+    transition-delay: 665ms;
   }
 
   .process-journey.is-visible .process-step-card:nth-child(3) .process-arrow-indicator {
     transform: translateX(-50%) scale(1) !important;
     opacity: 1 !important;
-    transition-delay: 1350ms;
+    transition-delay: 945ms;
   }
 
   .arrow-icon-desktop {
@@ -2389,6 +2364,8 @@ textarea.form-control {
 .careers-section {
   position: relative;
   overflow: hidden;
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 700px;
 }
 
 .careers-grid {

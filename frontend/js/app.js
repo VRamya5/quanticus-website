@@ -4,8 +4,11 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Header Scroll Shadow & Styling
+  // 1. Header Scroll Shadow & ScrollSpy Setup
   const header = document.querySelector('.site-header');
+  const navLinks = document.querySelectorAll('.nav-menu .nav-link');
+  const sections = document.querySelectorAll('section[id]');
+
   function updateHeader() {
     if (window.scrollY > 20) {
       header?.classList.add('scrolled');
@@ -13,62 +16,45 @@ document.addEventListener('DOMContentLoaded', () => {
       header?.classList.remove('scrolled');
     }
   }
-  window.addEventListener('scroll', updateHeader, { passive: true });
-  updateHeader();
-
-  // 2. Mobile Navigation Menu Toggle
-  const mobileToggle = document.getElementById('mobileNavToggle');
-  const navMenu = document.getElementById('mainNavMenu');
-
-  if (mobileToggle && navMenu) {
-    mobileToggle.addEventListener('click', () => {
-      const isExpanded = mobileToggle.getAttribute('aria-expanded') === 'true';
-      mobileToggle.setAttribute('aria-expanded', !isExpanded);
-      navMenu.classList.toggle('open');
-    });
-
-    // Close menu when clicking nav links or CTA button
-    navMenu.querySelectorAll('.nav-link, .nav-cta-btn').forEach((link) => {
-      link.addEventListener('click', () => {
-        mobileToggle.setAttribute('aria-expanded', 'false');
-        navMenu.classList.remove('open');
-      });
-    });
-
-    // Close when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!navMenu.contains(e.target) && !mobileToggle.contains(e.target) && navMenu.classList.contains('open')) {
-        mobileToggle.setAttribute('aria-expanded', 'false');
-        navMenu.classList.remove('open');
-      }
-    });
-  }
-
-  // 3. ScrollSpy: Highlight Active Section in Navbar
-  const navLinks = document.querySelectorAll('.nav-menu .nav-link');
-  const sections = document.querySelectorAll('section[id]');
 
   function updateActiveNav() {
     const scrollPosition = window.scrollY + 140; // Offset for fixed navbar
 
-    sections.forEach((section) => {
+    for (let i = 0; i < sections.length; i++) {
+      const section = sections[i];
       const sectionTop = section.offsetTop;
       const sectionHeight = section.offsetHeight;
       const sectionId = section.getAttribute('id');
 
       if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-        navLinks.forEach((link) => {
+        for (let j = 0; j < navLinks.length; j++) {
+          const link = navLinks[j];
           const href = link.getAttribute('href');
           if (href === `#${sectionId}` || (sectionId === 'process' && href === '#how-we-work')) {
             link.classList.add('active');
           } else {
             link.classList.remove('active');
           }
-        });
+        }
+        break;
       }
-    });
+    }
   }
-  window.addEventListener('scroll', updateActiveNav, { passive: true });
+
+  let isScrollTicking = false;
+  function handleScroll() {
+    if (!isScrollTicking) {
+      requestAnimationFrame(() => {
+        updateHeader();
+        updateActiveNav();
+        isScrollTicking = false;
+      });
+      isScrollTicking = true;
+    }
+  }
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  updateHeader();
   updateActiveNav();
 
   // 4. Scroll Reveal Observer - Replay Entrance Animations Every Time Section Enters Viewport
@@ -93,7 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const workSection = document.getElementById('work');
   const workMarqueeContainer = document.getElementById('workMarqueeContainer');
   const workMarqueeTrack = document.getElementById('workMarqueeTrack');
-  const workMarqueeToggle = document.getElementById('workMarqueeToggle');
 
   if (workMarqueeContainer && workMarqueeTrack) {
     // Dynamic duration calculation: speed of ~40px per second based on content width (half track width)
@@ -122,27 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     workMarqueeTrack.addEventListener('touchend', clearTouch, { passive: true });
     workMarqueeTrack.addEventListener('touchcancel', clearTouch, { passive: true });
-
-    // Pause / Play button toggle (aria-pressed, clear label)
-    if (workMarqueeToggle) {
-      const iconPause = workMarqueeToggle.querySelector('.icon-pause');
-      const iconPlay = workMarqueeToggle.querySelector('.icon-play');
-      const toggleLabel = workMarqueeToggle.querySelector('.marquee-btn-label');
-
-      workMarqueeToggle.addEventListener('click', () => {
-        const isPaused = workMarqueeContainer.classList.toggle('is-paused');
-        workMarqueeToggle.setAttribute('aria-pressed', isPaused ? 'true' : 'false');
-        workMarqueeToggle.setAttribute('aria-label', isPaused ? 'Resume marquee animation' : 'Pause marquee animation');
-
-        if (iconPause && iconPlay) {
-          iconPause.style.display = isPaused ? 'none' : 'block';
-          iconPlay.style.display = isPaused ? 'block' : 'none';
-        }
-        if (toggleLabel) {
-          toggleLabel.textContent = isPaused ? 'Play' : 'Pause';
-        }
-      });
-    }
 
     // Pause when section is off-screen via IntersectionObserver
     if ('IntersectionObserver' in window && workSection) {
@@ -750,10 +714,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Hardware capabilities detection
       const isLowEnd = typeof navigator !== 'undefined' &&
-        navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4;
-      const isMobile = window.innerWidth < 1024;
-      const effectiveSpacing = isLowEnd ? DOTFIELD_CONFIG.spacingLowEnd : (isMobile ? DOTFIELD_CONFIG.spacingMobile : DOTFIELD_CONFIG.spacingDesktop);
-      const targetFps = isLowEnd ? 30 : 60;
+        ((navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4) ||
+         (navigator.deviceMemory && navigator.deviceMemory <= 4));
+      const isMobileScreen = window.innerWidth <= 768;
+      const throttlePerformance = isLowEnd || isMobileScreen;
+      const effectiveSpacing = throttlePerformance ? 42 : DOTFIELD_CONFIG.spacingDesktop;
+      const targetFps = throttlePerformance ? 30 : 60;
       const frameInterval = 1000 / targetFps;
       let lastFrameTime = 0;
 
@@ -783,7 +749,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       function updateLayout() {
         const rect = heroSection.getBoundingClientRect();
-        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        dpr = throttlePerformance ? 1 : Math.min(window.devicePixelRatio || 1, 2);
         canvasW = rect.width;
         canvasH = rect.height;
         dotCanvas.width = Math.floor(canvasW * dpr);
@@ -897,8 +863,8 @@ document.addEventListener('DOMContentLoaded', () => {
         dotfieldRafId = null;
         if (!isHeroInView || document.hidden) return;
 
-        // Frame rate throttling for low-end devices
-        if (isLowEnd) {
+        // Frame rate throttling for low-end and mobile devices (capped at 30fps)
+        if (throttlePerformance) {
           const elapsed = now - lastFrameTime;
           if (elapsed < frameInterval) {
             dotfieldRafId = requestAnimationFrame(renderDotField);
