@@ -363,327 +363,111 @@
           </p>
         </div>
 
-        <div class="work-grid">
+        <!-- Controls: Pause / Play toggle button -->
+        <div class="work-marquee-controls reveal">
+          <button type="button" class="btn-marquee-toggle" id="workMarqueeToggle" aria-pressed="false" aria-label="Pause marquee animation">
+            <svg class="marquee-btn-icon icon-pause" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <rect x="6" y="4" width="4" height="16" rx="1.5"></rect>
+              <rect x="14" y="4" width="4" height="16" rx="1.5"></rect>
+            </svg>
+            <svg class="marquee-btn-icon icon-play" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display: none;">
+              <polygon points="6 4 20 12 6 20 6 4"></polygon>
+            </svg>
+            <span class="marquee-btn-label">Pause</span>
+          </button>
+        </div>
 
-          <!-- PROJECT 01: Capital Plus Trading App (Mobile Application Wireframe Prototype) -->
-          <article class="project-card reveal">
-            <div class="project-visual-stage">
+      </div>
 
-              <!-- Smartphone Frame -->
-              <div class="mobile-phone-frame" aria-hidden="true">
-                <div class="mobile-phone-speaker"></div>
-                <div class="mobile-screen-content">
-
-                  <div class="mobile-ui-appbar">
-                    <div style="width: 40px; height: 6px; background: #1d4ed8; border-radius: 3px;"></div>
-                    <div class="mobile-avatar-circle"></div>
-                  </div>
-
-                  <!-- Portfolio Balance Card -->
-                  <div class="mobile-app-balance-card">
-                    <div class="balance-pill"></div>
-                    <div class="balance-val"></div>
-                    <div class="balance-sub"></div>
-                  </div>
-
-                  <!-- Trading Chart Wireframe -->
-                  <div class="mobile-chart-box">
-                    <svg class="chart-svg-wireframe" viewBox="0 0 160 45" fill="none">
-                      <path d="M5 38 L35 28 L65 32 L95 18 L125 22 L155 8" stroke="#1D4ED8" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" />
-                      <circle cx="155" cy="8" r="3" fill="#1D4ED8" />
-                    </svg>
-                  </div>
-
-                  <!-- Buy / Sell Action Pills -->
-                  <div class="mobile-action-pills">
-                    <div class="action-pill-btn"></div>
-                    <div class="action-pill-btn sec"></div>
-                  </div>
-
-                  <!-- Market Asset List Rows -->
-                  <div class="mobile-asset-rows">
-                    <div class="mobile-asset-item">
-                      <div class="asset-icon-circle"></div>
-                      <div class="asset-line-mock"></div>
-                      <div class="asset-sparkline-mock"></div>
-                    </div>
-                    <div class="mobile-asset-item">
-                      <div class="asset-icon-circle" style="background: #0284c7;"></div>
-                      <div class="asset-line-mock"></div>
-                      <div class="asset-sparkline-mock"></div>
-                    </div>
-                  </div>
-
-                </div>
+      <!-- Projects Marquee (Edge-to-edge masked viewport with duplicated track for seamless 0 to -50% loop) -->
+      <div class="work-marquee-container reveal" id="workMarqueeContainer">
+        <div class="work-marquee-viewport" id="workMarqueeViewport">
+          <div class="work-marquee-track" id="workMarqueeTrack">
+            <!-- PROJECT 01: Capital Plus Trading App -->
+            <article class="work-card" tabindex="0">
+              <div class="work-card-body">
+                <h3 class="work-card-title">Capital Plus Trading App</h3>
+                <p class="work-card-desc">
+                  A mobile application built for investment tracking, real-time market data viewing, and account activity
+                  monitoring.
+                </p>
               </div>
+            </article>
 
-            </div>
-
-            <div class="project-details">
-              <span class="project-category-badge">Trading & Investment App</span>
-              <h3 class="project-title">Capital Plus Trading App</h3>
-              <p class="project-desc">
-                A mobile application built for investment tracking, real-time market data viewing, and account activity
-                monitoring.
-              </p>
-            </div>
-          </article>
-
-          <!-- PROJECT 02: Portfolio Plus (Desktop Browser Wireframe Prototype) -->
-          <article class="project-card reveal reveal-delay-1">
-            <div class="project-visual-stage">
-
-              <!-- Desktop Browser Frame -->
-              <div class="browser-web-frame" aria-hidden="true">
-                <div class="browser-mockup-top">
-                  <div class="browser-controls">
-                    <span class="browser-dot red"></span>
-                    <span class="browser-dot yellow"></span>
-                    <span class="browser-dot green"></span>
-                  </div>
-                  <div class="browser-address">https://portfolioplus.portal</div>
-                </div>
-
-                <div class="browser-viewport-layout">
-                  <!-- Sidebar Wireframe -->
-                  <div class="browser-sidebar-wireframe">
-                    <div class="sidebar-icon-block active"></div>
-                    <div class="sidebar-icon-block"></div>
-                    <div class="sidebar-icon-block"></div>
-                  </div>
-
-                  <!-- Main Dashboard Wireframe -->
-                  <div class="browser-main-wireframe">
-                    <div class="dashboard-header-wireframe">
-                      <div class="dash-title-bar"></div>
-                      <div class="dash-filter-pill"></div>
-                    </div>
-
-                    <!-- KPI Metric Cards -->
-                    <div class="kpi-cards-row">
-                      <div class="kpi-wireframe-card">
-                        <div class="kpi-bar-label"></div>
-                        <div class="kpi-bar-val"></div>
-                      </div>
-                      <div class="kpi-wireframe-card">
-                        <div class="kpi-bar-label"></div>
-                        <div class="kpi-bar-val sec"></div>
-                      </div>
-                      <div class="kpi-wireframe-card">
-                        <div class="kpi-bar-label"></div>
-                        <div class="kpi-bar-val ter"></div>
-                      </div>
-                    </div>
-
-                    <!-- Asset Distribution Bar Wireframe -->
-                    <div class="dashboard-chart-wireframe">
-                      <div class="chart-bar-group">
-                        <div class="chart-bar-label"></div>
-                        <div class="chart-progress-track">
-                          <div class="chart-progress-fill w-75"></div>
-                        </div>
-                      </div>
-                      <div class="chart-bar-group">
-                        <div class="chart-bar-label"></div>
-                        <div class="chart-progress-track">
-                          <div class="chart-progress-fill w-50"></div>
-                        </div>
-                      </div>
-                      <div class="chart-bar-group">
-                        <div class="chart-bar-label"></div>
-                        <div class="chart-progress-track">
-                          <div class="chart-progress-fill w-35"></div>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
+            <!-- PROJECT 02: Portfolio Plus -->
+            <article class="work-card" tabindex="0">
+              <div class="work-card-body">
+                <h3 class="work-card-title">Portfolio Plus</h3>
+                <p class="work-card-desc">
+                  A web portal giving clients clear visibility into their holdings, asset distribution, performance
+                  summaries, and account statements.
+                </p>
               </div>
+            </article>
 
-            </div>
-
-            <div class="project-details">
-              <span class="project-category-badge">Client Portal</span>
-              <h3 class="project-title">Portfolio Plus</h3>
-              <p class="project-desc">
-                A web portal giving clients clear visibility into their holdings, asset distribution, performance
-                summaries, and account statements.
-              </p>
-            </div>
-          </article>
-
-          <!-- PROJECT 03: Custom HRMS (Desktop Browser Wireframe Prototype) -->
-          <article class="project-card reveal">
-            <div class="project-visual-stage">
-
-              <!-- Desktop Browser Frame -->
-              <div class="browser-web-frame" aria-hidden="true">
-                <div class="browser-mockup-top">
-                  <div class="browser-controls">
-                    <span class="browser-dot red"></span>
-                    <span class="browser-dot yellow"></span>
-                    <span class="browser-dot green"></span>
-                  </div>
-                  <div class="browser-address">https://hrms.quanticus.internal</div>
-                </div>
-
-                <div class="browser-viewport-layout">
-                  <!-- Sidebar Wireframe -->
-                  <div class="browser-sidebar-wireframe">
-                    <div class="sidebar-icon-block active"></div>
-                    <div class="sidebar-icon-block"></div>
-                    <div class="sidebar-icon-block"></div>
-                  </div>
-
-                  <!-- Main Dashboard Wireframe -->
-                  <div class="browser-main-wireframe">
-                    <div class="dashboard-header-wireframe">
-                      <div class="dash-title-bar" style="width: 70px;"></div>
-                      <div class="dash-filter-pill" style="width: 48px;"></div>
-                    </div>
-
-                    <!-- KPI Metric Cards -->
-                    <div class="kpi-cards-row">
-                      <div class="kpi-wireframe-card">
-                        <div class="kpi-bar-label" style="width: 60%;"></div>
-                        <div class="kpi-bar-val"></div>
-                      </div>
-                      <div class="kpi-wireframe-card">
-                        <div class="kpi-bar-label" style="width: 45%;"></div>
-                        <div class="kpi-bar-val sec"></div>
-                      </div>
-                      <div class="kpi-wireframe-card">
-                        <div class="kpi-bar-label" style="width: 50%;"></div>
-                        <div class="kpi-bar-val ter"></div>
-                      </div>
-                    </div>
-
-                    <!-- Employee Directory & Status Rows -->
-                    <div class="hrms-employee-grid">
-                      <div class="hrms-emp-row">
-                        <div class="hrms-emp-info">
-                          <div class="hrms-avatar"></div>
-                          <div class="hrms-emp-name"></div>
-                        </div>
-                        <div class="hrms-status-tag"></div>
-                      </div>
-                      <div class="hrms-emp-row">
-                        <div class="hrms-emp-info">
-                          <div class="hrms-avatar" style="background: #0284c7;"></div>
-                          <div class="hrms-emp-name" style="width: 56px;"></div>
-                        </div>
-                        <div class="hrms-status-tag"></div>
-                      </div>
-                      <div class="hrms-emp-row">
-                        <div class="hrms-emp-info">
-                          <div class="hrms-avatar" style="background: #3b82f6;"></div>
-                          <div class="hrms-emp-name" style="width: 42px;"></div>
-                        </div>
-                        <div class="hrms-status-tag leave"></div>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
+            <!-- PROJECT 03: Custom HRMS -->
+            <article class="work-card" tabindex="0">
+              <div class="work-card-body">
+                <h3 class="work-card-title">Custom HRMS</h3>
+                <p class="work-card-desc">
+                  A Frappe-based internal system managing employee records, attendance, leave approvals, and
+                  organizational directories.
+                </p>
               </div>
+            </article>
 
-            </div>
-
-            <div class="project-details">
-              <span class="project-category-badge">Internal Operations</span>
-              <h3 class="project-title">Custom HRMS</h3>
-              <p class="project-desc">
-                A Frappe-based internal system managing employee records, attendance, leave approvals, and
-                organizational directories.
-              </p>
-            </div>
-          </article>
-
-          <!-- PROJECT 04: CRM (Desktop Browser Wireframe Prototype) -->
-          <article class="project-card reveal reveal-delay-1">
-            <div class="project-visual-stage">
-
-              <!-- Desktop Browser Frame -->
-              <div class="browser-web-frame" aria-hidden="true">
-                <div class="browser-mockup-top">
-                  <div class="browser-controls">
-                    <span class="browser-dot red"></span>
-                    <span class="browser-dot yellow"></span>
-                    <span class="browser-dot green"></span>
-                  </div>
-                  <div class="browser-address">https://crm.pipeline.platform</div>
-                </div>
-
-                <div class="browser-viewport-layout">
-                  <!-- Sidebar Wireframe -->
-                  <div class="browser-sidebar-wireframe">
-                    <div class="sidebar-icon-block active"></div>
-                    <div class="sidebar-icon-block"></div>
-                    <div class="sidebar-icon-block"></div>
-                  </div>
-
-                  <!-- Main CRM Pipeline View -->
-                  <div class="browser-main-wireframe">
-                    <div class="dashboard-header-wireframe">
-                      <div class="dash-title-bar" style="width: 75px;"></div>
-                      <div class="dash-filter-pill" style="width: 35px;"></div>
-                    </div>
-
-                    <!-- Pipeline Kanban Columns -->
-                    <div class="crm-pipeline-row">
-                      <div class="crm-pipeline-col">
-                        <div class="crm-col-header">
-                          <div class="crm-col-title"></div>
-                        </div>
-                        <div class="crm-deal-card">
-                          <div class="crm-deal-title"></div>
-                          <div class="crm-deal-val"></div>
-                        </div>
-                        <div class="crm-deal-card">
-                          <div class="crm-deal-title" style="width: 65%;"></div>
-                          <div class="crm-deal-val" style="width: 40%; background: #0284c7;"></div>
-                        </div>
-                      </div>
-
-                      <div class="crm-pipeline-col">
-                        <div class="crm-col-header">
-                          <div class="crm-col-title" style="width: 28px;"></div>
-                        </div>
-                        <div class="crm-deal-card">
-                          <div class="crm-deal-title" style="width: 70%;"></div>
-                          <div class="crm-deal-val" style="background: #3b82f6;"></div>
-                        </div>
-                      </div>
-
-                      <div class="crm-pipeline-col">
-                        <div class="crm-col-header">
-                          <div class="crm-col-title" style="width: 25px;"></div>
-                        </div>
-                        <div class="crm-deal-card">
-                          <div class="crm-deal-title" style="width: 85%;"></div>
-                          <div class="crm-deal-val" style="background: #10b981;"></div>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
+            <!-- PROJECT 04: CRM Platform -->
+            <article class="work-card" tabindex="0">
+              <div class="work-card-body">
+                <h3 class="work-card-title">CRM Platform</h3>
+                <p class="work-card-desc">
+                  A centralized platform for tracking business leads, pipeline stages, client conversations, and follow-up
+                  tasks.
+                </p>
               </div>
+            </article>
 
-            </div>
+            <!-- DUPLICATE SET FOR SEAMLESS ENDLESS LOOP (aria-hidden and non-focusable) -->
+            <article class="work-card" aria-hidden="true">
+              <div class="work-card-body">
+                <h3 class="work-card-title">Capital Plus Trading App</h3>
+                <p class="work-card-desc">
+                  A mobile application built for investment tracking, real-time market data viewing, and account activity
+                  monitoring.
+                </p>
+              </div>
+            </article>
 
-            <div class="project-details">
-              <span class="project-category-badge">Sales & Relationship Tool</span>
-              <h3 class="project-title">CRM Platform</h3>
-              <p class="project-desc">
-                A centralized platform for tracking business leads, pipeline stages, client conversations, and follow-up
-                tasks.
-              </p>
-            </div>
-          </article>
+            <article class="work-card" aria-hidden="true">
+              <div class="work-card-body">
+                <h3 class="work-card-title">Portfolio Plus</h3>
+                <p class="work-card-desc">
+                  A web portal giving clients clear visibility into their holdings, asset distribution, performance
+                  summaries, and account statements.
+                </p>
+              </div>
+            </article>
 
+            <article class="work-card" aria-hidden="true">
+              <div class="work-card-body">
+                <h3 class="work-card-title">Custom HRMS</h3>
+                <p class="work-card-desc">
+                  A Frappe-based internal system managing employee records, attendance, leave approvals, and
+                  organizational directories.
+                </p>
+              </div>
+            </article>
+
+            <article class="work-card" aria-hidden="true">
+              <div class="work-card-body">
+                <h3 class="work-card-title">CRM Platform</h3>
+                <p class="work-card-desc">
+                  A centralized platform for tracking business leads, pipeline stages, client conversations, and follow-up
+                  tasks.
+                </p>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>

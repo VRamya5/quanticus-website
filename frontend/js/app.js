@@ -89,6 +89,87 @@ document.addEventListener('DOMContentLoaded', () => {
 
   revealElements.forEach((el) => revealObserver.observe(el));
 
+  // 4.01 Work Section Project Marquee Controller
+  const workSection = document.getElementById('work');
+  const workMarqueeContainer = document.getElementById('workMarqueeContainer');
+  const workMarqueeTrack = document.getElementById('workMarqueeTrack');
+  const workMarqueeToggle = document.getElementById('workMarqueeToggle');
+
+  if (workMarqueeContainer && workMarqueeTrack) {
+    // Dynamic duration calculation: speed of ~40px per second based on content width (half track width)
+    const updateMarqueeDuration = () => {
+      const halfWidth = workMarqueeTrack.scrollWidth / 2;
+      if (halfWidth > 0) {
+        const speed = 40; // 40px per second
+        const duration = (halfWidth / speed).toFixed(2);
+        workMarqueeContainer.style.setProperty('--marquee-duration', `${duration}s`);
+      }
+    };
+
+    updateMarqueeDuration();
+    window.addEventListener('load', updateMarqueeDuration, { once: true });
+    window.addEventListener('resize', () => {
+      requestAnimationFrame(updateMarqueeDuration);
+    }, { passive: true });
+
+    // Mobile touch pause: pause while user is actively touching the marquee
+    workMarqueeTrack.addEventListener('touchstart', () => {
+      workMarqueeTrack.classList.add('is-touching');
+    }, { passive: true });
+
+    const clearTouch = () => {
+      workMarqueeTrack.classList.remove('is-touching');
+    };
+    workMarqueeTrack.addEventListener('touchend', clearTouch, { passive: true });
+    workMarqueeTrack.addEventListener('touchcancel', clearTouch, { passive: true });
+
+    // Pause / Play button toggle (aria-pressed, clear label)
+    if (workMarqueeToggle) {
+      const iconPause = workMarqueeToggle.querySelector('.icon-pause');
+      const iconPlay = workMarqueeToggle.querySelector('.icon-play');
+      const toggleLabel = workMarqueeToggle.querySelector('.marquee-btn-label');
+
+      workMarqueeToggle.addEventListener('click', () => {
+        const isPaused = workMarqueeContainer.classList.toggle('is-paused');
+        workMarqueeToggle.setAttribute('aria-pressed', isPaused ? 'true' : 'false');
+        workMarqueeToggle.setAttribute('aria-label', isPaused ? 'Resume marquee animation' : 'Pause marquee animation');
+
+        if (iconPause && iconPlay) {
+          iconPause.style.display = isPaused ? 'none' : 'block';
+          iconPlay.style.display = isPaused ? 'block' : 'none';
+        }
+        if (toggleLabel) {
+          toggleLabel.textContent = isPaused ? 'Play' : 'Pause';
+        }
+      });
+    }
+
+    // Pause when section is off-screen via IntersectionObserver
+    if ('IntersectionObserver' in window && workSection) {
+      const workOffscreenObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            workMarqueeContainer.classList.remove('is-offscreen');
+          } else {
+            workMarqueeContainer.classList.add('is-offscreen');
+          }
+        });
+      }, {
+        threshold: 0
+      });
+      workOffscreenObserver.observe(workSection);
+    }
+
+    // Pause when tab is hidden
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        workMarqueeContainer.classList.add('is-tab-hidden');
+      } else {
+        workMarqueeContainer.classList.remove('is-tab-hidden');
+      }
+    });
+  }
+
   // 4.1 Process / How We Work Section Sequential Scroll Animation Observer
   const processSection = document.getElementById('process');
   const processJourney = document.querySelector('.process-journey');
