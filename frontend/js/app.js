@@ -1058,95 +1058,61 @@ document.addEventListener('DOMContentLoaded', () => {
     return name.slice(0, 2).toUpperCase();
   }
 
+  const mobileQuery = window.matchMedia('(max-width: 767.98px)');
   let currentDirObserver = null;
+
+  function setupDirectorsMode() {
+    if (!dirAccordion) return;
+    const isMobile = mobileQuery.matches;
+    const wrappers = dirAccordion.querySelectorAll('.dir-panel-wrapper');
+
+    wrappers.forEach((wrapper) => {
+      // Remove any leftover state or inline styles from other mode
+      wrapper.classList.remove('is-expanded');
+      const panel = wrapper.querySelector('.dir-panel');
+      if (panel) {
+        panel.removeAttribute('aria-expanded');
+        if (isMobile) {
+          panel.removeAttribute('role');
+          panel.removeAttribute('tabindex');
+        } else {
+          panel.setAttribute('role', 'button');
+          panel.setAttribute('tabindex', '0');
+        }
+      }
+    });
+  }
+
+  // Listen for breakpoint changes to switch cleanly between mobile grid and desktop accordion
+  if (mobileQuery.addEventListener) {
+    mobileQuery.addEventListener('change', setupDirectorsMode);
+  } else if (mobileQuery.addListener) {
+    mobileQuery.addListener(setupDirectorsMode);
+  }
 
   function bindDirectorsAccordion() {
     if (!directorsSection || !dirAccordion) return;
 
-    const dirPanelWrappers = Array.from(dirAccordion.querySelectorAll('.dir-panel-wrapper'));
-    if (dirPanelWrappers.length === 0) return;
-
-    const mobileQuery = window.matchMedia('(max-width: 767.98px)');
-
-    function setMobileExpandedPanel(activeIndex) {
-      dirPanelWrappers.forEach((wrapper, index) => {
-        const panel = wrapper.querySelector('.dir-panel');
-        if (index === activeIndex) {
-          wrapper.classList.add('is-expanded');
-          if (panel) panel.setAttribute('aria-expanded', 'true');
-        } else {
-          wrapper.classList.remove('is-expanded');
-          if (panel) panel.setAttribute('aria-expanded', 'false');
-        }
-      });
-    }
-
-    // Attach click and keyboard listeners to panels
-    dirPanelWrappers.forEach((wrapper, index) => {
-      const panel = wrapper.querySelector('.dir-panel');
-      if (!panel) return;
-
-      function handleSelect(e) {
-        if (!mobileQuery.matches) return; // Desktop uses CSS hover
-        e.preventDefault();
-        setMobileExpandedPanel(index);
-      }
-
-      panel.addEventListener('click', handleSelect);
-
-      panel.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          if (mobileQuery.matches) {
-            e.preventDefault();
-            setMobileExpandedPanel(index);
-          }
-        }
-      });
-    });
-
-    // Handle breakpoint transitions
-    function handleBreakpointChange(e) {
-      if (e.matches) {
-        const hasExpanded = dirPanelWrappers.some((w) => w.classList.contains('is-expanded'));
-        if (!hasExpanded) {
-          setMobileExpandedPanel(0);
-        }
-      }
-    }
-
-    if (mobileQuery.addEventListener) {
-      mobileQuery.addEventListener('change', handleBreakpointChange);
-    } else if (mobileQuery.addListener) {
-      mobileQuery.addListener(handleBreakpointChange);
-    }
-
-    // Initial check on load: if already on mobile, set panel 0 expanded
-    if (mobileQuery.matches) {
-      setMobileExpandedPanel(0);
-    }
+    setupDirectorsMode();
 
     // Disconnect previous observer if any
     if (currentDirObserver) {
       currentDirObserver.disconnect();
     }
 
-    // IntersectionObserver for entrance stagger and replay (Replays on Every Viewport Entry)
+    // IntersectionObserver for entrance animation replay (Replays on Every Viewport Entry)
     currentDirObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           dirAccordion.classList.add('is-visible');
-          // On mobile replay/entry, reset to first panel open
-          if (mobileQuery.matches) {
-            setMobileExpandedPanel(0);
-          }
         } else {
           // Reset when leaving viewport so it replays upon next scroll entry
           dirAccordion.classList.remove('is-visible');
         }
       });
     }, {
-      threshold: 0.15,
-      rootMargin: '0px 0px -40px 0px'
+      threshold: 0.2,
+      rootMargin: '0px 0px -30px 0px'
     });
 
     currentDirObserver.observe(directorsSection);
@@ -1160,15 +1126,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     directorsList.forEach((director, index) => {
       const wrapper = document.createElement('div');
-      wrapper.className = `dir-panel-wrapper ${index === 0 ? 'is-expanded' : ''}`;
+      wrapper.className = 'dir-panel-wrapper';
       wrapper.style.setProperty('--dir-index', index);
 
       const panel = document.createElement('article');
       panel.className = 'dir-panel';
-      panel.setAttribute('role', 'button');
-      panel.setAttribute('tabindex', '0');
       panel.setAttribute('aria-label', `${director.name}, ${director.role}`);
-      panel.setAttribute('aria-expanded', index === 0 ? 'true' : 'false');
 
       // Visual stage
       const visual = document.createElement('div');
@@ -1179,8 +1142,8 @@ document.addEventListener('DOMContentLoaded', () => {
         img.src = director.photo_url;
         img.alt = director.name;
         img.className = 'dir-img';
-        img.width = 800;
-        img.height = 800;
+        img.width = 400;
+        img.height = 400;
         img.loading = 'lazy';
         visual.appendChild(img);
       } else {
