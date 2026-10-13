@@ -139,20 +139,67 @@ document.addEventListener('DOMContentLoaded', () => {
   const processJourney = document.querySelector('.process-journey');
 
   if (processSection && processJourney) {
-    const processObserver = new IntersectionObserver((entries) => {
+    let lastProcessScrollY = window.scrollY;
+    let processScrollDirection = 'down';
+
+    window.addEventListener('scroll', () => {
+      const currentY = window.scrollY;
+      if (currentY < lastProcessScrollY) {
+        processScrollDirection = 'up';
+      } else if (currentY > lastProcessScrollY) {
+        processScrollDirection = 'down';
+      }
+      lastProcessScrollY = currentY;
+    }, { passive: true });
+
+    // Immediate start if section is already partly or mostly on screen on load/jump
+    const checkImmediateVisibility = () => {
+      const rect = processSection.getBoundingClientRect();
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      if (rect.top < vh * 1.3 && rect.bottom > -vh * 0.3) {
+        if (processScrollDirection === 'up') {
+          processJourney.classList.add('scroll-up-entry');
+        }
+        processJourney.classList.add('is-visible');
+      }
+    };
+    checkImmediateVisibility();
+
+    // 1. Enter Observer: 30% top/bottom expanded margin, threshold 0
+    // Starts animation while section is still just off-screen in both scroll directions
+    const processEnterObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
+          if (processScrollDirection === 'up') {
+            processJourney.classList.add('scroll-up-entry');
+          } else {
+            processJourney.classList.remove('scroll-up-entry');
+          }
           processJourney.classList.add('is-visible');
-        } else {
-          // Replay: reset state when section leaves viewport
-          processJourney.classList.remove('is-visible');
         }
       });
     }, {
-      threshold: 0.3
+      rootMargin: '30% 0px 30% 0px',
+      threshold: 0
     });
 
-    processObserver.observe(processSection);
+    processEnterObserver.observe(processSection);
+
+    // 2. Reset Observer (Hysteresis): 100% expanded margin, threshold 0
+    // Only resets when section is more than 1 full viewport height away from screen
+    const processResetObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          processJourney.classList.remove('is-visible');
+          processJourney.classList.remove('scroll-up-entry');
+        }
+      });
+    }, {
+      rootMargin: '100% 0px 100% 0px',
+      threshold: 0
+    });
+
+    processResetObserver.observe(processSection);
   }
 
   // 5. Animated Number Counter for Stats Section

@@ -1269,6 +1269,57 @@
   transition-delay: 945ms;
 }
 
+/* Faster Sequence when Entering while Scrolling UP (About half delays) */
+.process-journey.is-visible.scroll-up-entry .process-step-card:nth-child(1) {
+  transition-delay: 0ms;
+}
+.process-journey.is-visible.scroll-up-entry .process-step-card:nth-child(2) {
+  transition-delay: 140ms;
+}
+.process-journey.is-visible.scroll-up-entry .process-step-card:nth-child(3) {
+  transition-delay: 280ms;
+}
+.process-journey.is-visible.scroll-up-entry .process-step-card:nth-child(4) {
+  transition-delay: 420ms;
+}
+
+.process-journey.is-visible.scroll-up-entry .process-step-card:nth-child(1)::after {
+  transition-delay: 105ms;
+}
+.process-journey.is-visible.scroll-up-entry .process-step-card:nth-child(2)::after {
+  transition-delay: 245ms;
+}
+.process-journey.is-visible.scroll-up-entry .process-step-card:nth-child(3)::after {
+  transition-delay: 385ms;
+}
+
+.process-journey.is-visible.scroll-up-entry .process-step-card:nth-child(1) .process-arrow-indicator {
+  transition-delay: 190ms;
+}
+.process-journey.is-visible.scroll-up-entry .process-step-card:nth-child(2) .process-arrow-indicator {
+  transition-delay: 330ms;
+}
+.process-journey.is-visible.scroll-up-entry .process-step-card:nth-child(3) .process-arrow-indicator {
+  transition-delay: 470ms;
+}
+
+/* Fast Icon Stroke delays when Scrolling UP */
+.process-journey.is-visible.scroll-up-entry .icon-understand .bubble-back { transition-delay: 20ms; }
+.process-journey.is-visible.scroll-up-entry .icon-understand .bubble-front { transition-delay: 50ms; }
+
+.process-journey.is-visible.scroll-up-entry .icon-plan .plan-frame { transition-delay: 155ms; }
+.process-journey.is-visible.scroll-up-entry .icon-plan .plan-line { transition-delay: 210ms; }
+.process-journey.is-visible.scroll-up-entry .icon-plan .tick-1 { transition-delay: 260ms; }
+.process-journey.is-visible.scroll-up-entry .icon-plan .tick-2 { transition-delay: 315ms; }
+.process-journey.is-visible.scroll-up-entry .icon-plan .tick-3 { transition-delay: 365ms; }
+
+.process-journey.is-visible.scroll-up-entry .icon-build .bracket-left { transition-delay: 295ms; }
+.process-journey.is-visible.scroll-up-entry .icon-build .code-slash { transition-delay: 330ms; }
+.process-journey.is-visible.scroll-up-entry .icon-build .bracket-right { transition-delay: 365ms; }
+
+.process-journey.is-visible.scroll-up-entry .icon-support .shield-body { transition-delay: 435ms; }
+.process-journey.is-visible.scroll-up-entry .icon-support .shield-tick { transition-delay: 505ms; }
+
 .process-arrow-indicator svg {
   transition: transform var(--transition-fast);
 }
@@ -2331,6 +2382,30 @@ textarea.form-control {
     transition-delay: 945ms;
   }
 
+  .process-journey.is-visible.scroll-up-entry .process-step-card:nth-child(1)::after {
+    transition-delay: 90ms;
+  }
+
+  .process-journey.is-visible.scroll-up-entry .process-step-card:nth-child(2)::after {
+    transition-delay: 245ms;
+  }
+
+  .process-journey.is-visible.scroll-up-entry .process-step-card:nth-child(3)::after {
+    transition-delay: 400ms;
+  }
+
+  .process-journey.is-visible.scroll-up-entry .process-step-card:nth-child(1) .process-arrow-indicator {
+    transition-delay: 190ms;
+  }
+
+  .process-journey.is-visible.scroll-up-entry .process-step-card:nth-child(2) .process-arrow-indicator {
+    transition-delay: 330ms;
+  }
+
+  .process-journey.is-visible.scroll-up-entry .process-step-card:nth-child(3) .process-arrow-indicator {
+    transition-delay: 470ms;
+  }
+
   .arrow-icon-desktop {
     display: none !important;
   }
@@ -3239,9 +3314,15 @@ body.modal-open {
 @media (prefers-reduced-motion: reduce) {
   .process-step-card,
   .process-step-card:not(:last-child)::after,
-  .process-step-num {
+  .process-step-num,
+  .process-arrow-indicator,
+  .icon-draw-path,
+  .speech-dot,
+  .cursor-blink,
+  .shield-pulse-ring {
     opacity: 1 !important;
     transform: none !important;
+    stroke-dashoffset: 0 !important;
     transition: none !important;
     animation: none !important;
   }
