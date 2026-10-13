@@ -4,7 +4,7 @@
    ========================================================================== */
 
 :root {
-  color-scheme: light;
+  color-scheme: only light;
 
   /* Brand Color Palette */
   --color-brand-primary: #1d4ed8;       /* Royal Blue */

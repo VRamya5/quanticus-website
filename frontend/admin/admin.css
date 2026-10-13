@@ -5,7 +5,7 @@
 
 /* 1. Design Tokens */
 :root {
-  color-scheme: light;
+  color-scheme: only light;
 
   /* Brand Colors */
   --color-brand-primary: #1d4ed8;
@@ -248,19 +248,8 @@ textarea.form-control {
   text-align: center;
 }
 
-.logo-plate,
-.brand-logo-plate {
-  display: block;
-  line-height: 0;
-  padding: 0;
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-}
-
 .brand-logo-img {
-  height: 38px;
+  height: 40px;
   width: auto;
   max-width: 170px;
   object-fit: contain;

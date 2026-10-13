@@ -1,5 +1,5 @@
 :root {
-  color-scheme: light;
+  color-scheme: only light;
 }
 
 /* --------------------------------------------------------------------------
@@ -31,15 +31,6 @@
   align-items: center;
   justify-content: space-between;
   height: 100%;
-}
-
-/* Solid White Plate for Logo (Ensures consistent rendering across all themes) */
-.logo-plate,
-.brand-logo-plate,
-.footer-logo-plate {
-  display: block;
-  line-height: 0;
-  box-sizing: border-box;
 }
 
 /* Brand Logo column layout: Logo on top, Slogan strictly below */
@@ -85,7 +76,7 @@
 }
 
 .brand-logo-img {
-  height: 36px;
+  height: 40px;
   width: auto;
   max-width: 155px;
   object-fit: contain;
@@ -95,7 +86,7 @@
 }
 
 .footer-logo-img {
-  height: 42px;
+  height: 44px;
   width: auto;
   max-width: 180px;
   object-fit: contain;
@@ -269,18 +260,22 @@
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-md);
-  border: 1px solid var(--color-border-subtle);
-  background-color: #ffffff;
-  color: var(--color-text-primary);
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff !important;
+  color: #0b192c !important;
   cursor: pointer;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .hamburger-line {
   width: 20px;
   height: 2px;
-  background-color: var(--color-text-primary);
+  background-color: #0b192c !important;
   transition: transform var(--transition-normal), opacity var(--transition-normal);
   position: relative;
+  display: block;
 }
 
 .hamburger-line::before,
@@ -289,7 +284,7 @@
   position: absolute;
   width: 20px;
   height: 2px;
-  background-color: var(--color-text-primary);
+  background-color: #0b192c !important;
   transition: transform var(--transition-normal);
 }
 
@@ -304,15 +299,17 @@
 }
 
 .mobile-toggle[aria-expanded="true"] .hamburger-line {
-  background-color: transparent;
+  background-color: transparent !important;
 }
 
 .mobile-toggle[aria-expanded="true"] .hamburger-line::before {
   transform: translateY(6px) rotate(45deg);
+  background-color: #0b192c !important;
 }
 
 .mobile-toggle[aria-expanded="true"] .hamburger-line::after {
   transform: translateY(-6px) rotate(-45deg);
+  background-color: #0b192c !important;
 }
 
 /* --------------------------------------------------------------------------
