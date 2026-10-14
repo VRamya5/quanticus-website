@@ -105,7 +105,7 @@ This guide walks you through deploying the complete **Quanticus** application us
 
 ### 3.1 Update `frontend/vercel.json`
 
-Open `frontend/vercel.json` in your code editor and replace `YOUR-RENDER-SERVICE` with your actual Render service name:
+Verify `frontend/vercel.json` has your actual Render service name configured under `rewrites` and production-grade cache headers:
 
 ```json
 {
@@ -121,9 +121,39 @@ Open `frontend/vercel.json` in your code editor and replace `YOUR-RENDER-SERVICE
       ]
     },
     {
-      "source": "/(assets|css|js)/(.*)",
+      "source": "/",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400, must-revalidate" }
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/admin",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/:path*\\.html",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/:path*\\.(css|js)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/:path*\\.(ico|png|jpg|jpeg|svg|webp|gif|woff|woff2|ttf|eot|otf)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=604800" }
+      ]
+    },
+    {
+      "source": "/assets/(.*\\.(?:[a-f0-9]{8,}|v\\d+)\\..*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
     }
   ],
@@ -140,14 +170,33 @@ Open `frontend/vercel.json` in your code editor and replace `YOUR-RENDER-SERVICE
 }
 ```
 
-Commit and push this change to your repository:
+Commit and push changes to your repository:
 ```bash
 git add frontend/vercel.json
-git commit -m "Configure production Render backend URL in vercel.json"
+git commit -m "Configure production cache headers and Render backend URL in vercel.json"
 git push origin main
 ```
 
-### 3.2 Import Project in Vercel
+### 3.2 Cache Invalidation & Version Bumping (?v=...)
+
+To prevent visitors (especially mobile phones with aggressive caching) from serving stale CSS and JS files after updating frontend code:
+
+1. **Version Format**: Uses `?v=YYYYMMDD[suffix]` (e.g. `?v=20261014a`).
+2. **Files Containing Version Strings**:
+   - `frontend/index.html`: `css/design-system.css?v=...`, `css/main.css?v=...`, `js/app.js?v=...`
+   - `frontend/admin/index.html`: `/admin/admin.css?v=...`, `/admin/admin.js?v=...`
+3. **How to Bump Before Deploying**:
+   - Do a project-wide find and replace on the query parameter across `frontend/*.html`:
+     - **Find**: `?v=20261014a`
+     - **Replace**: `?v=YYYYMMDDa` (substitute today's date)
+   - Or run this PowerShell one-liner from the project root:
+     ```powershell
+     $newVer = (Get-Date -Format 'yyyyMMdd') + 'a'
+     (Get-Content frontend/index.html) -replace '\?v=[0-9a-z]+', "?v=$newVer" | Set-Content frontend/index.html
+     (Get-Content frontend/admin/index.html) -replace '\?v=[0-9a-z]+', "?v=$newVer" | Set-Content frontend/admin/index.html
+     ```
+
+### 3.3 Import Project in Vercel
 
 1. Log in to [Vercel Dashboard](https://vercel.com/).
 2. Click **Add New...** -> **Project**.

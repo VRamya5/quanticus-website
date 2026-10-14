@@ -445,6 +445,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  will-change: background-position;
   animation: heroTextSweep 7.5s ease-in-out infinite;
   animation-delay: 1.2s;
 }
@@ -1485,6 +1486,7 @@
 /* 1. Speech Dots Loop (Understand) */
 .speech-dot {
   opacity: 0;
+  will-change: transform, opacity;
 }
 
 @keyframes typingDots {
@@ -1518,6 +1520,7 @@
   stroke: var(--color-brand-primary);
   stroke-width: 1.75px;
   opacity: 0;
+  will-change: opacity;
 }
 
 @keyframes cursorBlink {
@@ -1547,6 +1550,7 @@
   pointer-events: none;
   opacity: 0;
   transform: scale(0.95);
+  will-change: transform, opacity;
 }
 
 @keyframes shieldPulse {
@@ -2524,6 +2528,7 @@ textarea.form-control {
   border-radius: 50%;
   background-color: #10b981;
   box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+  will-change: transform, opacity;
   animation: pulseDot 2.2s infinite ease-in-out;
 }
 

@@ -18,12 +18,16 @@
   <!-- Google Fonts matching the website -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
+  <link rel="preload" as="style"
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
-    rel="stylesheet">
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap">
+  </noscript>
 
   <!-- Self-contained Admin Stylesheet (Absolute Path) -->
-  <link rel="stylesheet" href="/admin/admin.css">
+  <link rel="stylesheet" href="/admin/admin.css?v=20261014a">
 </head>
 
 <body>
@@ -586,7 +590,7 @@
   <div class="admin-toast-container" id="toastContainer" aria-live="polite"></div>
 
   <!-- Admin Application Script (Absolute Path) -->
-  <script src="/admin/admin.js"></script>
+  <script defer src="/admin/admin.js?v=20261014a"></script>
 </body>
 
 </html>
