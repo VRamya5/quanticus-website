@@ -13,6 +13,7 @@
   --color-brand-subtle: #dbeafe;        /* Subtle Blue Border/Accent */
   --color-brand-accent: #2563eb;        /* Bright Action Blue */
   --color-brand-glow: rgba(37, 99, 235, 0.12);
+  --slogan-color: #1d4ed8;              /* Consistent brand slogan color with > 6.4:1 contrast */
 
   /* Deep Contrast & Neutral Tones */
   --color-navy-950: #060e1a;            /* Ultra Dark Navy */

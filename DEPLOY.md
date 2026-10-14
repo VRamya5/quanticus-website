@@ -181,14 +181,14 @@ git push origin main
 
 To prevent visitors (especially mobile phones with aggressive caching) from serving stale CSS and JS files after updating frontend code:
 
-1. **Version Format**: Uses `?v=YYYYMMDD[suffix]` (e.g. `?v=20261014a`).
+1. **Version Format**: Uses `?v=YYYYMMDD[suffix]` (e.g. `?v=20261014b`).
 2. **Files Containing Version Strings**:
    - `frontend/index.html`: `css/design-system.css?v=...`, `css/main.css?v=...`, `js/app.js?v=...`
    - `frontend/admin/index.html`: `/admin/admin.css?v=...`, `/admin/admin.js?v=...`
 3. **How to Bump Before Deploying**:
    - Do a project-wide find and replace on the query parameter across `frontend/*.html`:
-     - **Find**: `?v=20261014a`
-     - **Replace**: `?v=YYYYMMDDa` (substitute today's date)
+     - **Find**: `?v=20261014b`
+     - **Replace**: `?v=YYYYMMDD[suffix]` (substitute current date)
    - Or run this PowerShell one-liner from the project root:
      ```powershell
      $newVer = (Get-Date -Format 'yyyyMMdd') + 'a'

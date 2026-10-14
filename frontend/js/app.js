@@ -57,6 +57,67 @@ document.addEventListener('DOMContentLoaded', () => {
   updateHeader();
   updateActiveNav();
 
+  // 2. Mobile Navigation Menu Toggle Controller
+  const mobileToggle = document.getElementById('mobileNavToggle');
+  const navMenu = document.getElementById('mainNavMenu');
+
+  if (mobileToggle && navMenu) {
+    const closeMenu = () => {
+      mobileToggle.setAttribute('aria-expanded', 'false');
+      navMenu.classList.remove('open');
+    };
+
+    const openMenu = () => {
+      mobileToggle.setAttribute('aria-expanded', 'true');
+      navMenu.classList.add('open');
+    };
+
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isExpanded = mobileToggle.getAttribute('aria-expanded') === 'true';
+      if (isExpanded) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    // Close when tapping a nav link or CTA button
+    navMenu.querySelectorAll('.nav-link, .nav-cta-btn').forEach((link) => {
+      link.addEventListener('click', () => {
+        closeMenu();
+      });
+    });
+
+    // Close when clicking/tapping outside
+    document.addEventListener('click', (e) => {
+      if (navMenu.classList.contains('open') && !navMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
+        closeMenu();
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('open')) {
+        closeMenu();
+        mobileToggle.focus();
+      }
+    });
+
+    // Close when resized above the mobile breakpoint
+    const mobileBreakpoint = window.matchMedia('(max-width: 768px)');
+    const handleBreakpointChange = (e) => {
+      if (!e.matches && navMenu.classList.contains('open')) {
+        closeMenu();
+      }
+    };
+    if (mobileBreakpoint.addEventListener) {
+      mobileBreakpoint.addEventListener('change', handleBreakpointChange);
+    } else if (mobileBreakpoint.addListener) {
+      mobileBreakpoint.addListener(handleBreakpointChange);
+    }
+  }
+
   // 4. Scroll Reveal Observer - Replay Entrance Animations Every Time Section Enters Viewport
   const revealElements = document.querySelectorAll('.reveal');
   const revealObserver = new IntersectionObserver((entries) => {
